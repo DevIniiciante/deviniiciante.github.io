@@ -1,0 +1,277 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    background: radial-gradient(
+        ellipse at top,
+        #291743 0%,
+        #12111e 45%,
+        #08080e 100%
+    );
+
+    font-family: 'Inter', sans-serif;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+}
+
+/* CONTAINER PRINCIPAL */
+
+.container {
+    width: 100%;
+    max-width: 430px;
+
+    text-align: center;
+
+    animation: aparecer 0.8s ease;
+}
+
+/* PERFIL */
+
+.perfil {
+    margin-bottom: 35px;
+}
+
+.foto {
+    display: block;
+
+    width: 125px;
+    height: 125px;
+
+    object-fit: cover;
+    border-radius: 50%;
+
+    border: 3px solid #a855f7;
+    padding: 4px;
+
+    margin: 0 auto 20px;
+
+    box-shadow: 0 0 30px #a855f755;
+
+    transition: transform 0.3s ease;
+}
+
+.foto:hover {
+    transform: scale(1.08);
+}
+
+.perfil h1 {
+    font-size: 27px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.perfil h1 i {
+    color: #b679ff;
+    font-size: 21px;
+}
+
+.usuario {
+    color: #b679ff;
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 20px;
+}
+
+.descricao {
+    color: #b7b4c5;
+    font-size: 13px;
+    line-height: 2;
+}
+
+/* ÁREA DOS LINKS */
+
+.links {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+/* BOTÕES */
+
+.link {
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    width: 100%;
+    min-height: 82px;
+
+    padding: 15px 18px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 16px;
+
+    color: white;
+    text-decoration: none;
+
+    text-align: left;
+
+    transition: all 0.3s ease;
+}
+
+/* ÍCONES */
+
+.icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    background: rgba(168, 85, 247, 0.12);
+
+    border-radius: 12px;
+
+    color: #c4a0ff;
+    font-size: 23px;
+}
+
+/* TEXTO DOS BOTÕES */
+
+.texto-link {
+    flex: 1;
+    min-width: 0;
+}
+
+.texto-link h2 {
+    font-size: 15px;
+    font-weight: 600;
+
+    margin-bottom: 5px;
+}
+
+.texto-link p {
+    color: #aaa5b7;
+    font-size: 12px;
+}
+
+/* SETA */
+
+.seta {
+    color: #858094;
+    font-size: 14px;
+}
+
+/* EFEITO AO PASSAR O MOUSE */
+
+a.link:hover {
+    background: rgba(168, 85, 247, 0.12);
+
+    border-color: #a855f7;
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 25px rgba(168, 85, 247, 0.15);
+}
+
+a.link:hover .icone {
+    background: #a855f7;
+    color: white;
+}
+
+a.link:hover .seta {
+    color: #c4a0ff;
+}
+
+/* YOUTUBE EM BREVE */
+
+.indisponivel {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.em-breve {
+    font-size: 11px;
+
+    padding: 7px 10px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border-radius: 20px;
+
+    color: #aaa5b7;
+    white-space: nowrap;
+}
+
+/* RODAPÉ */
+
+footer {
+    margin-top: 45px;
+
+    color: #777184;
+    font-size: 11px;
+    line-height: 2.2;
+}
+
+footer i {
+    color: #b679ff;
+}
+
+/* ANIMAÇÃO DE ENTRADA */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 480px) {
+
+    .perfil h1 {
+        font-size: 23px;
+    }
+
+    .descricao {
+        font-size: 12px;
+    }
+
+    .link {
+        padding: 14px;
+        gap: 12px;
+    }
+
+    .icone {
+        width: 43px;
+        height: 43px;
+        font-size: 21px;
+    }
+
+    .texto-link h2 {
+        font-size: 14px;
+    }
+
+    .texto-link p {
+        font-size: 11px;
+    }
+}
