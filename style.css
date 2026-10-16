@@ -1,6 +1,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
+/* ==========================================
+   DEVINICIANTE — MIDNIGHT BLUE
+   ========================================== */
+
+:root {
+    --azul-principal: #2563eb;
+    --azul-claro: #38bdf8;
+    --azul-hover: #3b82f6;
+    --azul-escuro: #070d1b;
+    --texto-principal: #f1f5f9;
+    --texto-secundario: #a7b7cd;
+}
+
 /* CONFIGURAÇÕES GERAIS */
 
 * {
@@ -14,13 +27,13 @@ body {
 
     background: radial-gradient(
         ellipse at top,
-        #291743 0%,
-        #12111e 45%,
-        #08080e 100%
+        #102d58 0%,
+        #0b1931 42%,
+        #070d1b 100%
     );
 
     font-family: 'Inter', sans-serif;
-    color: white;
+    color: var(--texto-principal);
 
     display: flex;
     justify-content: center;
@@ -55,18 +68,26 @@ body {
     object-fit: cover;
     border-radius: 50%;
 
-    border: 3px solid #a855f7;
+    border: 3px solid var(--azul-principal);
     padding: 4px;
 
     margin: 0 auto 20px;
 
-    box-shadow: 0 0 30px #a855f755;
+    box-shadow:
+        0 0 30px rgba(37, 99, 235, 0.35),
+        0 0 55px rgba(56, 189, 248, 0.08);
 
-    transition: transform 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .foto:hover {
     transform: scale(1.08);
+
+    box-shadow:
+        0 0 35px rgba(56, 189, 248, 0.4),
+        0 0 65px rgba(37, 99, 235, 0.15);
 }
 
 .perfil h1 {
@@ -76,12 +97,12 @@ body {
 }
 
 .perfil h1 i {
-    color: #b679ff;
+    color: var(--azul-claro);
     font-size: 21px;
 }
 
 .usuario {
-    color: #b679ff;
+    color: #7dd3fc;
     font-size: 14px;
     font-weight: 600;
 
@@ -89,7 +110,7 @@ body {
 }
 
 .descricao {
-    color: #b7b4c5;
+    color: var(--texto-secundario);
     font-size: 13px;
     line-height: 2;
 }
@@ -116,17 +137,21 @@ body {
 
     padding: 15px 18px;
 
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(15, 32, 59, 0.76);
 
-    border: 1px solid rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(96, 165, 250, 0.15);
     border-radius: 16px;
 
-    color: white;
+    color: var(--texto-principal);
     text-decoration: none;
 
     text-align: left;
 
-    transition: all 0.3s ease;
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 /* ÍCONES */
@@ -141,12 +166,18 @@ body {
 
     flex-shrink: 0;
 
-    background: rgba(168, 85, 247, 0.12);
+    background: rgba(37, 99, 235, 0.15);
 
+    border: 1px solid rgba(56, 189, 248, 0.12);
     border-radius: 12px;
 
-    color: #c4a0ff;
+    color: #7dd3fc;
     font-size: 23px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
 }
 
 /* TEXTO DOS BOTÕES */
@@ -164,39 +195,55 @@ body {
 }
 
 .texto-link p {
-    color: #aaa5b7;
+    color: var(--texto-secundario);
     font-size: 12px;
 }
 
 /* SETA */
 
 .seta {
-    color: #858094;
+    color: #7b94b4;
     font-size: 14px;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
 /* EFEITO AO PASSAR O MOUSE */
 
 a.link:hover {
-    background: rgba(168, 85, 247, 0.12);
+    background: rgba(37, 99, 235, 0.17);
 
-    border-color: #a855f7;
+    border-color: var(--azul-hover);
 
     transform: translateY(-4px);
 
-    box-shadow: 0 8px 25px rgba(168, 85, 247, 0.15);
+    box-shadow:
+        0 8px 25px rgba(37, 99, 235, 0.18),
+        0 0 18px rgba(56, 189, 248, 0.06);
 }
 
 a.link:hover .icone {
-    background: #a855f7;
+    background: var(--azul-principal);
+    border-color: var(--azul-hover);
     color: white;
 }
 
 a.link:hover .seta {
-    color: #c4a0ff;
+    color: var(--azul-claro);
+    transform: translate(2px, -2px);
 }
 
-/* YOUTUBE EM BREVE */
+/* ACESSIBILIDADE DO TECLADO */
+
+a.link:focus-visible,
+a.link-loja:focus-visible {
+    outline: 3px solid #7dd3fc;
+    outline-offset: 4px;
+}
+
+/* DISCORD E YOUTUBE EM BREVE */
 
 .indisponivel {
     opacity: 0.5;
@@ -208,11 +255,12 @@ a.link:hover .seta {
 
     padding: 7px 10px;
 
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(148, 163, 184, 0.12);
 
+    border: 1px solid rgba(148, 163, 184, 0.1);
     border-radius: 20px;
 
-    color: #aaa5b7;
+    color: #b4c1d3;
     white-space: nowrap;
 }
 
@@ -221,13 +269,13 @@ a.link:hover .seta {
 footer {
     margin-top: 45px;
 
-    color: #777184;
+    color: #8595ad;
     font-size: 11px;
     line-height: 2.2;
 }
 
 footer i {
-    color: #b679ff;
+    color: var(--azul-claro);
 }
 
 /* ANIMAÇÃO DE ENTRADA */
@@ -275,28 +323,51 @@ footer i {
         font-size: 11px;
     }
 }
-/* BOTÃO DA LOJA */
+
+/* BOTÃO DA LOJA
+   Mantido para compatibilidade com a classe .link-loja */
 
 .link-loja {
     display: block;
     padding: 16px 20px;
     margin-bottom: 15px;
 
-    background: linear-gradient(135deg, #a855f7, #6d28d9);
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
     color: white;
 
     text-align: center;
     text-decoration: none;
     font-weight: 700;
 
-    border: 1px solid #c084fc;
+    border: 1px solid #60a5fa;
     border-radius: 12px;
 
-    box-shadow: 0 0 20px rgba(168, 85, 247, 0.35);
-    transition: 0.3s;
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.35);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .link-loja:hover {
     transform: translateY(-4px);
-    box-shadow: 0 0 35px rgba(168, 85, 247, 0.6);
+
+    box-shadow: 0 0 35px rgba(37, 99, 235, 0.5);
+}
+
+/* REDUZ MOVIMENTOS PARA QUEM PREFERE */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
