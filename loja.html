@@ -1,28 +1,24 @@
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#070d1b">
-    <meta name="description" content="DevIniciante: criação de sites empresariais, pessoais e românticos com design moderno e personalizado.">
+    <meta name="description" content="DevIniciante Studio: criação de sites empresariais, pessoais e românticos. Produtos digitais e soluções personalizadas.">
+    <title>DevIniciante Studio | Sites e Soluções Digitais</title>
 
-    <title>DevIniciante | Sites e Soluções Digitais</title>
-
-    <link rel="icon" type="image/png" href="assets/dev.png">
-    <link rel="stylesheet" href="loja.css">
-
+    <link rel="icon" href="assets/dev.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="loja.css">
 
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
     <script src="loja.js" defer></script>
 </head>
-
 <body>
 
-    <!-- FUNDO ESPACIAL -->
     <div class="ambiente" aria-hidden="true">
         <div class="estrelas"></div>
         <div class="nebulosa nebulosa-esquerda"></div>
@@ -30,55 +26,50 @@
         <div class="planeta"></div>
     </div>
 
-    <!-- CABEÇALHO -->
     <header class="cabecalho">
-
-        <a class="logo" href="#inicio" aria-label="DevIniciante, início">
+        <a class="logo" href="#inicio" aria-label="DevIniciante Studio - Início">
             <span class="logo-icone">&lt;/&gt;</span>
             <span>Dev<strong>Iniciante</strong></span>
         </a>
 
         <nav class="menu" aria-label="Menu principal">
-            <a class="ativo" href="#inicio">Início</a>
+            <a href="#inicio" class="ativo">Início</a>
             <a href="#produtos">Produtos</a>
+            <a href="#planos">Planos</a>
             <a href="#servicos">Serviços</a>
             <a href="index.html">Comunidade</a>
         </nav>
 
-        <a class="botao-cabecalho" href="#servicos">
-            Ver planos
+        <a class="botao-cabecalho" href="#planos">
+            Criar meu site
             <i data-lucide="arrow-up-right"></i>
         </a>
-
     </header>
 
     <main>
 
-        <!-- APRESENTAÇÃO -->
+        <!-- HERO -->
         <section class="hero" id="inicio">
-
             <div class="hero-conteudo">
-
                 <div class="etiqueta">
                     <span class="ponto-luz"></span>
                     CRIATIVIDADE + TECNOLOGIA
                 </div>
 
                 <h1>
-                    Sua ideia merece
-                    <span>ganhar vida na internet.</span>
+                    Ideias incríveis merecem
+                    <span>soluções extraordinárias.</span>
                 </h1>
 
                 <p class="hero-descricao">
-                    Criamos sites modernos, responsivos e personalizados
-                    para empresas, profissionais e pessoas especiais.
-                    Transforme suas ideias em experiências digitais.
+                    Desenvolvemos experiências digitais que unem tecnologia,
+                    criatividade e design. Transforme sua ideia em um site
+                    profissional, moderno e feito especialmente para você.
                 </p>
 
                 <div class="hero-acoes">
-
-                    <a href="#servicos" class="botao botao-primario">
-                        Conhecer nossos planos
+                    <a href="#planos" class="botao botao-primario">
+                        Conhecer planos
                         <i data-lucide="arrow-right"></i>
                     </a>
 
@@ -86,29 +77,16 @@
                         Explorar produtos
                         <i data-lucide="shopping-bag"></i>
                     </a>
-
                 </div>
 
                 <div class="vantagens">
-                    <span>
-                        <i data-lucide="monitor-smartphone"></i>
-                        Responsivo
-                    </span>
-                    <span>
-                        <i data-lucide="palette"></i>
-                        Design personalizado
-                    </span>
-                    <span>
-                        <i data-lucide="sparkles"></i>
-                        Animações modernas
-                    </span>
+                    <span><i data-lucide="monitor"></i> Design moderno</span>
+                    <span><i data-lucide="smartphone"></i> Responsivo</span>
+                    <span><i data-lucide="sparkles"></i> Personalizado</span>
                 </div>
-
             </div>
 
-            <!-- ILUSTRAÇÃO ORIGINAL -->
             <div class="hero-visual" aria-label="Ilustração de desenvolvimento digital">
-
                 <div class="halo"></div>
                 <div class="orbita orbita-um"></div>
                 <div class="orbita orbita-dois"></div>
@@ -121,320 +99,71 @@
                 <div class="status-flutuante status-superior">
                     <span class="indicador-verde"></span>
                     <div>
-                        <strong>Sites personalizados</strong>
-                        <small>Feitos para cada projeto</small>
+                        <strong>Projeto em desenvolvimento</strong>
+                        <small>Sempre evoluindo</small>
                     </div>
                 </div>
 
                 <div class="status-flutuante status-direita">
-                    <i data-lucide="sparkles"></i>
+                    <i data-lucide="chart-no-axes-column-increasing"></i>
                     <div>
-                        <strong>Design e animações</strong>
-                        <small>Experiências modernas</small>
+                        <strong>Ideias que se tornam</strong>
+                        <small>realidade</small>
                     </div>
                 </div>
 
                 <div class="status-flutuante status-inferior">
-                    <i data-lucide="code-2"></i>
+                    <i data-lucide="star"></i>
                     <div>
-                        <strong>DevIniciante</strong>
-                        <small>Criatividade em código</small>
+                        <strong>Criando o futuro digital</strong>
+                        <small>Código, design e propósito</small>
                     </div>
                 </div>
-
             </div>
 
-            <a href="#servicos" class="indicador-scroll" aria-label="Ver serviços">
+            <a href="#produtos" class="indicador-scroll" aria-label="Ir para produtos">
                 <i data-lucide="mouse"></i>
                 <i data-lucide="chevron-down"></i>
             </a>
-
         </section>
 
-        <!-- PLANOS DE SITES -->
-        <section class="secao servicos" id="servicos">
-
-            <div class="secao-cabecalho">
-                <div>
-                    <span class="secao-etiqueta">CRIAÇÃO DE SITES</span>
-                    <h2>Escolha seu <span>plano ideal.</span></h2>
-                    <p>
-                        Soluções digitais para negócios, projetos pessoais
-                        e momentos especiais.
-                    </p>
-                </div>
-            </div>
-
-            <div class="grade-produtos grade-planos">
-
-                <!-- EMPRESARIAL BÁSICO -->
-                <article class="produto-card plano-card">
-
-                    <div class="plano-topo">
-                        <div class="plano-icone">
-                            <i data-lucide="building-2"></i>
-                        </div>
-                        <span class="categoria">EMPRESARIAL</span>
-                    </div>
-
-                    <div class="produto-informacoes">
-
-                        <h3>Site Empresarial Básico</h3>
-
-                        <p>
-                            Uma presença digital profissional para
-                            apresentar seu negócio e conquistar clientes.
-                        </p>
-
-                        <div class="plano-preco">
-                            <small>Pagamento único</small>
-                            <strong>R$ 70,00</strong>
-                        </div>
-
-                        <ul class="plano-recursos">
-                            <li>Site responsivo</li>
-                            <li>Apresentação da empresa</li>
-                            <li>Informações e serviços</li>
-                            <li>Botão de WhatsApp</li>
-                            <li>Redes sociais</li>
-                            <li>Localização do negócio</li>
-                        </ul>
-
-                        <button
-                            type="button"
-                            class="botao botao-primario botao-contratar"
-                            data-plano="empresarial-basico">
-                            Contratar agora
-                            <i data-lucide="arrow-right"></i>
-                        </button>
-
-                    </div>
-                </article>
-
-                <!-- EMPRESARIAL AVANÇADO -->
-                <article class="produto-card plano-card plano-destaque">
-
-                    <div class="plano-topo">
-                        <div class="plano-icone">
-                            <i data-lucide="briefcase-business"></i>
-                        </div>
-                        <span class="categoria">EMPRESARIAL AVANÇADO</span>
-                    </div>
-
-                    <div class="produto-informacoes">
-
-                        <h3>Site Empresarial Avançado</h3>
-
-                        <p>
-                            Uma experiência mais completa, com
-                            funcionalidades extras, animações
-                            e design personalizado.
-                        </p>
-
-                        <div class="plano-preco">
-                            <small>Pagamento único</small>
-                            <strong>R$ 90,00</strong>
-                        </div>
-
-                        <ul class="plano-recursos">
-                            <li>Tudo do plano Básico</li>
-                            <li>Mais seções e funcionalidades</li>
-                            <li>Galeria de fotos interativa</li>
-                            <li>Animações e efeitos visuais</li>
-                            <li>Design personalizado</li>
-                            <li>Elementos interativos</li>
-                        </ul>
-
-                        <button
-                            type="button"
-                            class="botao botao-primario botao-contratar"
-                            data-plano="empresarial-avancado">
-                            Contratar agora
-                            <i data-lucide="arrow-right"></i>
-                        </button>
-
-                    </div>
-                </article>
-
-                <!-- PESSOAL BÁSICO -->
-                <article class="produto-card plano-card">
-
-                    <div class="plano-topo">
-                        <div class="plano-icone">
-                            <i data-lucide="user-round"></i>
-                        </div>
-                        <span class="categoria">PESSOAL</span>
-                    </div>
-
-                    <div class="produto-informacoes">
-
-                        <h3>Site Pessoal Básico</h3>
-
-                        <p>
-                            Sua própria página na internet para
-                            apresentar quem você é e compartilhar
-                            seus links.
-                        </p>
-
-                        <div class="plano-preco">
-                            <small>Pagamento único</small>
-                            <strong>R$ 80,00</strong>
-                        </div>
-
-                        <ul class="plano-recursos">
-                            <li>Página pessoal responsiva</li>
-                            <li>Foto e apresentação</li>
-                            <li>Biografia personalizada</li>
-                            <li>Links importantes</li>
-                            <li>Redes sociais</li>
-                            <li>Visual profissional</li>
-                        </ul>
-
-                        <button
-                            type="button"
-                            class="botao botao-primario botao-contratar"
-                            data-plano="pessoal-basico">
-                            Contratar agora
-                            <i data-lucide="arrow-right"></i>
-                        </button>
-
-                    </div>
-                </article>
-
-                <!-- PESSOAL AVANÇADO -->
-                <article class="produto-card plano-card plano-destaque">
-
-                    <div class="plano-topo">
-                        <div class="plano-icone">
-                            <i data-lucide="layers-3"></i>
-                        </div>
-                        <span class="categoria">PESSOAL AVANÇADO</span>
-                    </div>
-
-                    <div class="produto-informacoes">
-
-                        <h3>Site Pessoal Avançado</h3>
-
-                        <p>
-                            Ideal para criadores, profissionais
-                            e quem deseja um portfólio
-                            mais completo e interativo.
-                        </p>
-
-                        <div class="plano-preco">
-                            <small>Pagamento único</small>
-                            <strong>R$ 120,00</strong>
-                        </div>
-
-                        <ul class="plano-recursos">
-                            <li>Tudo do plano Básico</li>
-                            <li>Portfólio de projetos</li>
-                            <li>Galeria interativa</li>
-                            <li>Animações personalizadas</li>
-                            <li>Mais seções e recursos</li>
-                            <li>Design exclusivo</li>
-                        </ul>
-
-                        <button
-                            type="button"
-                            class="botao botao-primario botao-contratar"
-                            data-plano="pessoal-avancado">
-                            Contratar agora
-                            <i data-lucide="arrow-right"></i>
-                        </button>
-
-                    </div>
-                </article>
-
-                <!-- ROMÂNTICO -->
-                <article class="produto-card plano-card plano-romantico">
-
-                    <div class="plano-topo">
-                        <div class="plano-icone">
-                            <i data-lucide="heart"></i>
-                        </div>
-                        <span class="categoria">SITE ROMÂNTICO</span>
-                    </div>
-
-                    <div class="produto-informacoes">
-
-                        <h3>Site Romântico Personalizado</h3>
-
-                        <p>
-                            Transforme sua história de amor em
-                            um presente digital inesquecível,
-                            com fotos, mensagens e surpresas.
-                        </p>
-
-                        <div class="plano-preco">
-                            <small>Pagamento único</small>
-                            <strong>R$ 110,00</strong>
-                        </div>
-
-                        <ul class="plano-recursos">
-                            <li>Design romântico personalizado</li>
-                            <li>Galeria de memórias</li>
-                            <li>Carta especial</li>
-                            <li>Quiz do casal</li>
-                            <li>Animações românticas</li>
-                            <li>Surpresas interativas</li>
-                        </ul>
-
-                        <button
-                            type="button"
-                            class="botao botao-primario botao-contratar"
-                            data-plano="romantico">
-                            Contratar agora
-                            <i data-lucide="heart"></i>
-                        </button>
-
-                    </div>
-                </article>
-
-            </div>
-
-            <p class="observacao-planos">
-                Os projetos são analisados individualmente.
-                Domínio próprio, hospedagem paga e recursos
-                fora do escopo podem ter custos adicionais,
-                informados antes da contratação.
-            </p>
-
-        </section>
-
-        <!-- PRODUTOS DIGITAIS -->
+        <!-- PRODUTOS -->
         <section class="secao produtos" id="produtos">
-
             <div class="secao-cabecalho">
                 <div>
-                    <span class="secao-etiqueta">APRENDA A PROGRAMAR</span>
+                    <span class="secao-etiqueta">NOSSA VITRINE</span>
                     <h2>Produtos <span>digitais.</span></h2>
-                    <p>Conheça nossos materiais para começar no desenvolvimento web.</p>
+                    <p>Explore soluções criadas com atenção a cada detalhe.</p>
                 </div>
+
+                <a href="#catalogo" class="botao-ver-todos">
+                    Ver todos
+                    <i data-lucide="arrow-right"></i>
+                </a>
             </div>
 
             <div class="grade-produtos" id="catalogo">
 
+                <!-- E-BOOK -->
                 <article class="produto-card ebook-card">
-
                     <div class="produto-preview ebook-preview">
                         <img
                             src="assets/capa-ebook.png"
                             alt="Capa do e-book Como Criar Seu Primeiro Site Profissional"
                             class="ebook-imagem"
-                            loading="lazy">
+                            loading="lazy"
+                        >
                     </div>
 
                     <div class="produto-informacoes">
-
                         <span class="categoria">E-BOOK • HTML & CSS</span>
 
                         <h3>Como Criar Seu Primeiro Site Profissional</h3>
 
                         <p>
-                            Aprenda HTML e CSS do zero,
-                            pratique com exemplos e crie seu próprio site.
-                            Inclui projeto bônus de portfólio!
+                            Aprenda HTML e CSS do zero, pratique com exemplos
+                            e crie seu próprio site. Inclui projeto bônus
+                            de portfólio!
                         </p>
 
                         <div class="ebook-preco">
@@ -446,192 +175,440 @@
                             href="https://pay.kiwify.com.br/lRGjt4s"
                             class="botao botao-primario ebook-botao"
                             target="_blank"
-                            rel="noopener noreferrer">
+                            rel="noopener noreferrer"
+                        >
                             Comprar e-book
                             <i data-lucide="shopping-cart"></i>
                         </a>
+                    </div>
+                </article>
 
+                <!-- WEBSITE -->
+                <article class="produto-card">
+                    <div class="produto-preview preview-site">
+                        <div class="mockup-janela">
+                            <div class="mockup-barra">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="mockup-corpo">
+                                <div class="mockup-lateral"></div>
+                                <div class="mockup-painel">
+                                    <div class="mockup-linha"></div>
+                                    <div class="mockup-blocos">
+                                        <span></span><span></span><span></span>
+                                    </div>
+                                    <div class="mockup-grafico"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="produto-informacoes">
+                        <span class="categoria">WEBSITE</span>
+                        <h3>Seu próximo projeto</h3>
+                        <p>Em breve, nossos primeiros sites e templates estarão disponíveis.</p>
+
+                        <div class="produto-rodape">
+                            <strong>Em breve</strong>
+                            <span>Aguarde <i data-lucide="arrow-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- APLICATIVO -->
+                <article class="produto-card">
+                    <div class="produto-preview preview-app">
+                        <div class="mockup-celular">
+                            <div class="mockup-notch"></div>
+                            <div class="app-titulo"></div>
+                            <div class="app-grafico">
+                                <span></span><span></span><span></span><span></span>
+                            </div>
+                            <div class="app-cartoes">
+                                <span></span><span></span>
+                            </div>
+                        </div>
+                        <div class="mockup-celular celular-atras"></div>
+                    </div>
+
+                    <div class="produto-informacoes">
+                        <span class="categoria">APLICATIVO</span>
+                        <h3>Novidades chegando</h3>
+                        <p>Aplicativos e ferramentas desenvolvidos para facilitar tarefas.</p>
+
+                        <div class="produto-rodape">
+                            <strong>Em breve</strong>
+                            <span>Aguarde <i data-lucide="arrow-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SISTEMA -->
+                <article class="produto-card">
+                    <div class="produto-preview preview-sistema">
+                        <div class="sistema-painel">
+                            <div class="sistema-menu"></div>
+                            <div class="sistema-conteudo">
+                                <div class="sistema-topo"></div>
+                                <div class="sistema-grid">
+                                    <span></span><span></span>
+                                    <span></span><span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="produto-informacoes">
+                        <span class="categoria">SISTEMA</span>
+                        <h3>Mais soluções</h3>
+                        <p>Novos projetos e sistemas personalizados estão a caminho.</p>
+
+                        <div class="produto-rodape">
+                            <strong>Em breve</strong>
+                            <span>Aguarde <i data-lucide="arrow-right"></i></span>
+                        </div>
                     </div>
                 </article>
 
             </div>
-
         </section>
 
-        <!-- COMO FUNCIONA -->
-        <section class="secao" id="como-funciona">
+        <!-- PLANOS -->
+       
+<!-- SITE PERSONALIZADO -->
+<section class="secao planos" id="planos">
+    <div class="secao-cabecalho">
+        <div>
+            <span class="secao-etiqueta">
+                DEVINICIANTE STUDIO
+            </span>
 
+            <h2>
+                Seu projeto, <span>do seu jeito.</span>
+            </h2>
+
+            <p>
+                Cada ideia é única. Desenvolvemos sites
+                personalizados para diferentes necessidades,
+                com orçamento definido de acordo com seu projeto.
+            </p>
+        </div>
+    </div>
+
+    <div class="grade-planos">
+
+        <article class="plano-card plano-personalizado">
+
+            <div class="plano-topo">
+                <span class="categoria">
+                    DESENVOLVIMENTO WEB
+                </span>
+
+                <div class="plano-icone">
+                    <i data-lucide="code-2"></i>
+                </div>
+
+                <h3>Site Personalizado</h3>
+
+                <p>
+                    Transformamos sua ideia em uma experiência
+                    digital moderna, responsiva e desenvolvida
+                    especialmente para você.
+                </p>
+            </div>
+
+            <div class="tipos-projeto">
+                <span>
+                    <i data-lucide="building-2"></i>
+                    Empresarial
+                </span>
+
+                <span>
+                    <i data-lucide="user-round"></i>
+                    Pessoal
+                </span>
+
+                <span>
+                    <i data-lucide="heart"></i>
+                    Romântico
+                </span>
+
+                <span>
+                    <i data-lucide="briefcase-business"></i>
+                    Portfólio
+                </span>
+
+                <span>
+                    <i data-lucide="rocket"></i>
+                    Projetos especiais
+                </span>
+            </div>
+
+            <ul class="plano-lista">
+                <li>
+                    <i data-lucide="check"></i>
+                    Design personalizado
+                </li>
+
+                <li>
+                    <i data-lucide="check"></i>
+                    Layout adaptado para celular e computador
+                </li>
+
+                <li>
+                    <i data-lucide="check"></i>
+                    Animações e efeitos visuais opcionais
+                </li>
+
+                <li>
+                    <i data-lucide="check"></i>
+                    Funcionalidades conforme a necessidade
+                </li>
+
+                <li>
+                    <i data-lucide="check"></i>
+                    Orçamento individual para cada projeto
+                </li>
+            </ul>
+
+            <div class="plano-rodape">
+                <span>Investimento</span>
+
+                <strong>Sob orçamento</strong>
+
+                <p class="texto-orcamento">
+                    O valor é definido após entendermos
+                    o tamanho, os recursos e a complexidade
+                    do seu projeto.
+                </p>
+
+                <button
+                    type="button"
+                    class="botao botao-primario botao-contratar"
+                    data-plano="personalizado"
+                >
+                    Solicitar orçamento
+                    <i data-lucide="arrow-up-right"></i>
+                </button>
+            </div>
+
+        </article>
+
+    </div>
+
+    <p class="planos-observacao">
+        Cada orçamento é elaborado individualmente.
+        Domínio próprio, hospedagem paga e recursos
+        adicionais podem ter custos separados,
+        informados antes da contratação.
+    </p>
+</section>
+
+
+        <!-- COMO FUNCIONA -->
+        <section class="secao processo" id="como-funciona">
             <div class="secao-cabecalho">
                 <div>
-                    <span class="secao-etiqueta">PROCESSO DE CONTRATAÇÃO</span>
-                    <h2>Simples, seguro e <span>personalizado.</span></h2>
-                    <p>Entenda como será desenvolvido seu projeto.</p>
+                    <span class="secao-etiqueta">SIMPLES E DIRETO</span>
+                    <h2>Como <span>funciona?</span></h2>
+                    <p>Do primeiro contato até a entrega do seu projeto.</p>
                 </div>
             </div>
 
-            <div class="etapas-contratacao">
+            <div class="grade-etapas">
+                <article class="etapa-card">
+    <span class="etapa-numero">01</span>
+    <i data-lucide="lightbulb"></i>
+    <h3>Conte sua ideia</h3>
+    <p>Descreva o site que deseja criar e as funcionalidades que imagina.</p>
+</article>
 
                 <article class="etapa-card">
-                    <i data-lucide="mouse-pointer-click"></i>
-                    <h3>01. Escolha seu plano</h3>
-                    <p>Selecione o tipo de site ideal para você.</p>
+    <span class="etapa-numero">02</span>
+    <i data-lucide="message-circle"></i>
+    <h3>Receba seu orçamento</h3>
+    <p>Analisamos seu projeto e combinamos o valor, os recursos e o prazo.</p>
+</article>
+
+                <article class="etapa-card">
+                    <span class="etapa-numero">03</span>
+                    <i data-lucide="code-2"></i>
+                    <h3>Desenvolvimento</h3>
+                    <p>Após o alinhamento, começamos a criação do projeto.</p>
                 </article>
 
                 <article class="etapa-card">
-                    <i data-lucide="clipboard-list"></i>
-                    <h3>02. Envie seu pedido</h3>
-                    <p>Conte suas ideias e informe o que deseja no site.</p>
+                    <span class="etapa-numero">04</span>
+                    <i data-lucide="rocket"></i>
+                    <h3>Entrega</h3>
+                    <p>Você recebe seu site conforme o escopo combinado.</p>
                 </article>
-
-                <article class="etapa-card">
-                    <i data-lucide="credit-card"></i>
-                    <h3>03. Realize o pagamento</h3>
-                    <p>Após a integração, o pagamento será pelo Mercado Pago.</p>
-                </article>
-
-                <article class="etapa-card">
-                    <i data-lucide="shield-check"></i>
-                    <h3>04. Análise e aprovação</h3>
-                    <p>
-                        O pagamento será confirmado e o pedido
-                        analisado antes do início do desenvolvimento.
-                        Pedidos recusados terão o pagamento devolvido.
-                    </p>
-                </article>
-
             </div>
+        </section>
 
+        <!-- SERVICOS -->
+        <section class="secao servicos" id="servicos">
+            <div class="servicos-conteudo">
+                <div class="servicos-texto">
+                    <span class="secao-etiqueta">PROJETOS SOB ENCOMENDA</span>
+                    <h2>Sua ideia merece sair <span>do papel.</span></h2>
+
+                    <p>
+                        Precisa de um site ou tem uma ideia diferente?
+                        Conte o que você imagina e vamos conversar sobre
+                        a melhor solução para seu projeto.
+                    </p>
+
+                    <a
+                        class="botao botao-primario"
+                        href="https://wa.me/5561993257747?text=Ol%C3%A1%21%20Quero%20conversar%20sobre%20um%20projeto%20personalizado%20da%20DevIniciante%20Studio."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Conversar pelo WhatsApp
+                        <i data-lucide="message-circle"></i>
+                    </a>
+                </div>
+
+                <div class="servicos-lista">
+                    <div>
+                        <i data-lucide="globe"></i>
+                        <span>Sites e landing pages</span>
+                    </div>
+                    <div>
+                        <i data-lucide="smartphone"></i>
+                        <span>Experiências responsivas</span>
+                    </div>
+                    <div>
+                        <i data-lucide="palette"></i>
+                        <span>Design personalizado</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
     </main>
 
-    <!-- FORMULÁRIO DE CONTRATAÇÃO -->
-    <div
-        class="modal-contratacao"
-        id="modal-contratacao"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="modal-titulo"
-        aria-hidden="true"
-        hidden>
-
-        <div class="modal-conteudo">
-
-            <button
-                type="button"
-                class="modal-fechar"
-                id="fechar-modal"
-                aria-label="Fechar formulário">
-                <i data-lucide="x"></i>
-            </button>
-
-            <span class="secao-etiqueta">NOVO PROJETO</span>
-            <h2 id="modal-titulo">Solicitar contratação</h2>
-
-            <p>
-                Preencha as informações para preparar
-                seu pedido de criação de site.
-            </p>
-
-            <div class="resumo-pedido">
-                <span>Plano selecionado</span>
-                <strong id="resumo-plano">Selecione um plano</strong>
-                <strong id="resumo-preco">R$ 0,00</strong>
-            </div>
-
-            <form id="form-contratacao">
-
-                <label for="cliente-nome">Nome completo</label>
-                <input
-                    type="text"
-                    id="cliente-nome"
-                    name="nome"
-                    autocomplete="name"
-                    maxlength="120"
-                    required
-                    placeholder="Seu nome completo">
-
-                <label for="cliente-email">E-mail</label>
-                <input
-                    type="email"
-                    id="cliente-email"
-                    name="email"
-                    autocomplete="email"
-                    maxlength="254"
-                    required
-                    placeholder="seuemail@exemplo.com">
-
-                <label for="cliente-whatsapp">WhatsApp</label>
-                <input
-                    type="tel"
-                    id="cliente-whatsapp"
-                    name="whatsapp"
-                    autocomplete="tel"
-                    maxlength="20"
-                    required
-                    placeholder="(61) 99999-9999">
-
-                <label for="cliente-projeto">Conte sobre seu projeto</label>
-                <textarea
-                    id="cliente-projeto"
-                    name="descricao"
-                    rows="5"
-                    minlength="15"
-                    maxlength="3000"
-                    required
-                    placeholder="Descreva como deseja seu site, cores, funcionalidades, referências e outras informações."></textarea>
-
-                <label class="campo-termos" for="aceite-termos">
-                    <input
-                        type="checkbox"
-                        id="aceite-termos"
-                        name="aceite"
-                        required>
-                    <span>
-                        Entendo que meu pedido será analisado após
-                        a confirmação do pagamento e que a contratação
-                        depende de aprovação. Em caso de recusa,
-                        o valor será reembolsado conforme as
-                        condições informadas e a legislação aplicável.
-                    </span>
-                </label>
-
-                <button
-                    type="submit"
-                    class="botao botao-primario botao-finalizar"
-                    id="botao-finalizar"
-                    disabled>
-                    Pagamento em configuração
-                    <i data-lucide="lock"></i>
-                </button>
-
-                <p class="aviso-pagamento" id="aviso-pagamento" role="status">
-                    O checkout ainda está em configuração.
-                    Nenhum pagamento será realizado nesta versão.
-                </p>
-
-            </form>
-
-        </div>
-
-    </div>
-
-    <!-- RODAPÉ -->
+    <!-- RODAPE -->
     <footer class="rodape">
-
         <a href="#inicio" class="logo">
             <span class="logo-icone">&lt;/&gt;</span>
             <span>Dev<strong>Iniciante</strong></span>
         </a>
 
-        <p>© 2026 DevIniciante. Criando, aprendendo e evoluindo.</p>
+        <p>© 2026 DevIniciante Studio. Criando, aprendendo e evoluindo.</p>
 
         <a href="index.html" class="rodape-comunidade">
             Comunidade
             <i data-lucide="arrow-up-right"></i>
         </a>
-
     </footer>
+
+    <!-- MODAL DE CONTRATACAO -->
+    <div
+        id="modal-contratacao"
+        class="modal-contratacao"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="titulo-contratacao"
+        aria-hidden="true"
+        hidden
+    >
+        <div class="modal-conteudo">
+            <button
+                type="button"
+                class="fechar-modal"
+                data-fechar-modal
+                aria-label="Fechar formulário"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+            <span class="secao-etiqueta">SOLICITAR PROJETO</span>
+
+            <h2 id="titulo-contratacao">
+                Vamos criar seu site?
+            </h2>
+
+            <p class="modal-descricao">
+                Preencha seus dados. Você será direcionado ao
+                WhatsApp com sua solicitação pronta para enviar.
+            </p>
+
+            <div class="resumo-contratacao">
+                <div>
+                    <small>PLANO SELECIONADO</small>
+                    <strong id="resumo-plano">—</strong>
+                </div>
+                <span id="resumo-preco">—</span>
+            </div>
+
+            <form id="form-contratacao">
+                <label for="cliente-nome">Nome completo *</label>
+                <input
+                    id="cliente-nome"
+                    type="text"
+                    maxlength="100"
+                    autocomplete="name"
+                    placeholder="Seu nome completo"
+                    required
+                >
+
+                <label for="cliente-email">E-mail *</label>
+                <input
+                    id="cliente-email"
+                    type="email"
+                    maxlength="150"
+                    autocomplete="email"
+                    placeholder="seuemail@exemplo.com"
+                    required
+                >
+
+                <label for="cliente-whatsapp">Seu WhatsApp *</label>
+                <input
+                    id="cliente-whatsapp"
+                    type="tel"
+                    maxlength="16"
+                    autocomplete="tel"
+                    placeholder="(61) 99999-9999"
+                    required
+                >
+
+                <label for="cliente-projeto">Conte sobre seu projeto</label>
+                <textarea
+                    id="cliente-projeto"
+                    rows="4"
+                    maxlength="1500"
+                    placeholder="Qual é a sua ideia? Quais cores, funções e detalhes você gostaria de ter?"
+                ></textarea>
+
+                <label class="aceite-termos">
+                    <input
+                        id="aceite-termos"
+                        type="checkbox"
+                        required
+                    >
+                    <span>
+                        Concordo em compartilhar os dados preenchidos
+                        pelo WhatsApp para solicitar meu projeto.
+                    </span>
+                </label>
+
+                <p id="aviso-pagamento">
+                    Nenhum pagamento será realizado nesta etapa.
+                </p>
+
+                <button
+                    id="botao-finalizar"
+                    type="submit"
+                    class="botao botao-primario"
+                >
+                    <i data-lucide="message-circle"></i>
+                    Contratar pelo WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
 
 </body>
 </html>

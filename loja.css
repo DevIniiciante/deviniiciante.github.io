@@ -1,9 +1,13 @@
 
-/* DEVINICIANTE | MIDNIGHT BLUE - LOJA COMPLETA */
+/* ==========================================
+   DEVINICIANTE STUDIO
+   MIDNIGHT BLUE - LOJA COMPLETA
+========================================== */
 
 :root {
     --fundo: #070d1b;
     --painel: #0c1930;
+    --painel-claro: #102342;
     --azul: #2563eb;
     --azul-claro: #38bdf8;
     --texto: #f1f5f9;
@@ -19,11 +23,11 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 115px;
+    scroll-padding-top: 130px;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     background: var(--fundo);
     color: var(--texto);
     overflow-x: hidden;
@@ -35,7 +39,18 @@ a {
     text-decoration: none;
 }
 
-button, a {
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button,
+a {
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -43,6 +58,12 @@ svg {
     width: 17px;
     height: 17px;
     flex-shrink: 0;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid #7dd3fc;
+    outline-offset: 4px;
 }
 
 /* FUNDO ESPACIAL */
@@ -108,7 +129,7 @@ svg {
     box-shadow: 0 0 85px rgba(29, 78, 216, .3);
 }
 
-/* CABEÇALHO */
+/* CABECALHO */
 
 .cabecalho {
     position: sticky;
@@ -123,7 +144,7 @@ svg {
     gap: 25px;
     border: 1px solid var(--borda);
     border-radius: 17px;
-    background: rgba(12, 25, 48, .83);
+    background: rgba(12, 25, 48, .88);
     backdrop-filter: blur(20px);
     box-shadow: 0 18px 50px rgba(0, 0, 0, .35);
 }
@@ -156,14 +177,14 @@ svg {
 .menu {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 25px;
 }
 
 .menu a {
     position: relative;
     padding: 10px 0;
     color: #94a3b8;
-    font-size: 13px;
+    font-size: 12px;
     transition: color .25s;
 }
 
@@ -285,19 +306,26 @@ svg {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
     padding: 15px 22px;
     border-radius: 10px;
     font-size: 13px;
     font-weight: 700;
-    transition: transform .3s, box-shadow .3s, border-color .3s;
+    text-align: center;
+    transition:
+        transform .3s,
+        box-shadow .3s,
+        border-color .3s,
+        background .3s;
 }
 
 .botao:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
 }
 
 .botao-primario {
+    border: 1px solid transparent;
+    color: #fff;
     background: linear-gradient(135deg, #3b82f6, #1d4ed8);
     box-shadow: 0 10px 35px rgba(37, 99, 235, .27);
 }
@@ -307,7 +335,7 @@ svg {
 }
 
 .botao-outline {
-    border: 1px solid rgba(255,255,255,.2);
+    border: 1px solid rgba(255, 255, 255, .2);
     background: rgba(12, 25, 48, .7);
 }
 
@@ -336,7 +364,7 @@ svg {
     color: var(--azul);
 }
 
-/* HERO 3D */
+/* HERO VISUAL */
 
 .hero-visual {
     position: relative;
@@ -353,7 +381,7 @@ svg {
     border-radius: 50%;
     background: radial-gradient(
         circle,
-        rgba(29,78,216,.48),
+        rgba(29, 78, 216, .48),
         transparent 70%
     );
     filter: blur(30px);
@@ -376,7 +404,6 @@ svg {
 .orbita-dois {
     width: 400px;
     height: 260px;
-    transform: rotate(-30deg);
     animation: orbitar 22s linear infinite;
 }
 
@@ -409,14 +436,17 @@ svg {
     place-items: center;
     border-radius: 43px;
     background:
-        linear-gradient(140deg, rgba(37,99,235,.25), transparent 65%),
+        linear-gradient(
+            140deg,
+            rgba(37, 99, 235, .25),
+            transparent 65%
+        ),
         #0c1930;
     border: 1px solid rgba(125, 211, 252, .65);
     box-shadow:
         0 0 90px rgba(37, 99, 235, .45),
         inset 0 0 45px rgba(37, 99, 235, .16),
         18px 22px 0 rgba(0, 0, 0, .3);
-    transform: rotate(-10deg);
     animation: flutuar 6s ease-in-out infinite;
 }
 
@@ -438,8 +468,8 @@ svg {
     border-radius: 12px;
     background: rgba(12, 28, 52, .87);
     backdrop-filter: blur(15px);
-    box-shadow: 0 12px 35px rgba(0,0,0,.4);
-    animation: flutuar 7s ease-in-out infinite;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .4);
+    animation: flutuar-card 7s ease-in-out infinite;
 }
 
 .status-flutuante strong,
@@ -454,7 +484,7 @@ svg {
 
 .status-flutuante small {
     font-size: 10px;
-    color: #a7b7cd;
+    color: var(--cinza);
 }
 
 .status-superior {
@@ -484,8 +514,8 @@ svg {
 .indicador-verde {
     width: 9px;
     height: 9px;
-    background: #4ade80;
     border-radius: 50%;
+    background: #4ade80;
     box-shadow: 0 0 13px #4ade80;
 }
 
@@ -501,18 +531,11 @@ svg {
     transform: translateX(-50%);
 }
 
-.indicador-scroll svg:first-child {
-    width: 23px;
-    height: 29px;
-}
-
 .indicador-scroll svg:last-child {
-    width: 15px;
-    height: 15px;
     animation: descer 2s infinite;
 }
 
-/* SEÇÕES */
+/* SECOES */
 
 .secao {
     position: relative;
@@ -553,6 +576,7 @@ svg {
     margin-top: 12px;
     color: var(--cinza);
     font-size: 13px;
+    line-height: 1.7;
 }
 
 .botao-ver-todos {
@@ -574,7 +598,7 @@ svg {
     transform: translateY(-3px);
 }
 
-/* CARDS */
+/* PRODUTOS */
 
 .grade-produtos {
     display: grid;
@@ -587,13 +611,16 @@ svg {
     border: 1px solid var(--borda);
     border-radius: 16px;
     background: rgba(12, 25, 48, .9);
-    transition: transform .35s, border-color .35s, box-shadow .35s;
+    transition:
+        transform .35s,
+        border-color .35s,
+        box-shadow .35s;
 }
 
 .produto-card:hover {
     transform: translateY(-9px);
-    border-color: rgba(37,99,235,.65);
-    box-shadow: 0 20px 55px rgba(29,78,216,.17);
+    border-color: rgba(37, 99, 235, .65);
+    box-shadow: 0 20px 55px rgba(29, 78, 216, .17);
 }
 
 .produto-preview {
@@ -617,7 +644,7 @@ svg {
     background: radial-gradient(circle at 55% 45%, #0f4a75, #070d1b 75%);
 }
 
-/* MINIATURA DE WEBSITE */
+/* MINIATURA WEBSITE */
 
 .mockup-janela {
     width: 210px;
@@ -695,7 +722,7 @@ svg {
     background: linear-gradient(145deg, #112d55, #1e40af);
 }
 
-/* MINIATURA DE APLICATIVO */
+/* MINIATURA APP */
 
 .mockup-celular {
     position: relative;
@@ -772,7 +799,7 @@ svg {
     opacity: .55;
 }
 
-/* MINIATURA DE SISTEMA */
+/* MINIATURA SISTEMA */
 
 .sistema-painel {
     display: flex;
@@ -822,7 +849,7 @@ svg {
     background: linear-gradient(135deg, #1d4ed8, #102d58);
 }
 
-/* TEXTO DOS PRODUTOS */
+/* INFORMACOES PRODUTOS */
 
 .produto-informacoes {
     padding: 21px;
@@ -830,8 +857,9 @@ svg {
 
 .categoria {
     display: inline-block;
+    width: fit-content;
     padding: 5px 9px;
-    border: 1px solid rgba(37,99,235,.45);
+    border: 1px solid rgba(37, 99, 235, .45);
     border-radius: 20px;
     color: #7dd3fc;
     font-size: 9px;
@@ -879,298 +907,7 @@ svg {
     height: 14px;
 }
 
-/* SERVIÇOS */
-
-.servicos-conteudo {
-    display: grid;
-    grid-template-columns: 1.2fr .8fr;
-    align-items: center;
-    gap: 45px;
-    padding: 65px;
-    border: 1px solid rgba(37,99,235,.28);
-    border-radius: 24px;
-    background:
-        radial-gradient(
-            ellipse at 85% 50%,
-            rgba(29,78,216,.24),
-            transparent 65%
-        ),
-        #0c1930;
-}
-
-.servicos-texto h2 {
-    max-width: 550px;
-}
-
-.servicos-texto p {
-    max-width: 540px;
-    margin: 20px 0 27px;
-    color: var(--cinza);
-    font-size: 13px;
-    line-height: 1.9;
-}
-
-.servicos-lista {
-    display: grid;
-    gap: 13px;
-}
-
-.servicos-lista div {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 18px;
-    border: 1px solid var(--borda);
-    border-radius: 12px;
-    background: rgba(255,255,255,.025);
-    font-size: 13px;
-}
-
-.servicos-lista svg {
-    color: var(--azul);
-    width: 20px;
-    height: 20px;
-}
-
-/* RODAPÉ */
-
-.rodape {
-    position: relative;
-    z-index: 1;
-    max-width: 1180px;
-    margin: auto;
-    padding: 30px 5px 40px;
-    border-top: 1px solid var(--borda);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-}
-
-.rodape p {
-    color: #94a3b8;
-    font-size: 11px;
-}
-
-.rodape-comunidade {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: #38bdf8;
-    font-size: 12px;
-}
-
-/* ANIMAÇÕES */
-
-@keyframes surgir {
-    from {
-        opacity: 0;
-        transform: translateY(28px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes flutuar {
-    0%, 100% {
-        transform: translateY(0) rotate(-10deg);
-    }
-    50% {
-        transform: translateY(-13px) rotate(-10deg);
-    }
-}
-
-@keyframes girar {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes orbitar {
-    from {
-        transform: rotate(-30deg);
-    }
-    to {
-        transform: rotate(330deg);
-    }
-}
-
-@keyframes descer {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(6px);
-    }
-}
-
-/* RESPONSIVIDADE */
-
-@media (max-width: 1220px) {
-    .cabecalho {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-
-    .hero, .secao, .rodape {
-        margin-left: 25px;
-        margin-right: 25px;
-    }
-}
-
-@media (max-width: 980px) {
-    .cabecalho {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .menu {
-        order: 3;
-        width: 100%;
-        justify-content: center;
-    }
-
-    .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding-top: 80px;
-        gap: 0;
-    }
-
-    .hero h1, .hero-descricao {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .hero-acoes, .vantagens {
-        justify-content: center;
-    }
-
-    .hero-visual {
-        min-height: 450px;
-    }
-
-    .indicador-scroll {
-        bottom: 0;
-    }
-
-    .grade-produtos {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .servicos-conteudo {
-        grid-template-columns: 1fr;
-        padding: 45px;
-    }
-}
-
-@media (max-width: 650px) {
-    .cabecalho {
-        margin: 12px 12px 0;
-        padding: 14px;
-        gap: 16px;
-    }
-
-    .logo {
-        font-size: 18px;
-    }
-
-    .botao-cabecalho {
-        padding: 11px;
-        font-size: 10px;
-    }
-
-    .menu {
-        gap: 17px;
-        flex-wrap: wrap;
-    }
-
-    .menu a {
-        font-size: 12px;
-    }
-
-    .hero {
-        margin: 0 18px;
-        padding: 65px 0 70px;
-    }
-
-    .hero h1 {
-        font-size: clamp(35px, 9vw, 49px);
-        letter-spacing: -1.7px;
-    }
-
-    .hero-descricao {
-        font-size: 13px;
-    }
-
-    .hero-visual {
-        min-height: 360px;
-        transform: scale(.7);
-        margin: -35px 0;
-    }
-
-    .status-direita {
-        right: -25px;
-    }
-
-    .secao {
-        margin: 0 18px;
-        padding: 60px 0;
-    }
-
-    .secao-cabecalho {
-        align-items: start;
-        flex-direction: column;
-    }
-
-    .grade-produtos {
-        grid-template-columns: 1fr;
-    }
-
-    .produto-informacoes p {
-        min-height: auto;
-    }
-
-    .servicos-conteudo {
-        padding: 35px 22px;
-    }
-
-    .rodape {
-        margin: 0 18px;
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-@media (max-width: 380px) {
-    .botao-cabecalho {
-        display: none;
-    }
-
-    .hero-acoes {
-        flex-direction: column;
-    }
-
-    .hero-visual {
-        transform: scale(.58);
-        margin: -65px 0;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-
-/* ==========================================
-   E-BOOK DEVINICIANTE — NOVO PRODUTO
-   ========================================== */
+/* EBOOK */
 
 .ebook-card {
     border-color: rgba(37, 99, 235, .48);
@@ -1232,7 +969,7 @@ svg {
 }
 
 .ebook-preco strong {
-    color: #ffffff;
+    color: #fff;
     font-size: 29px;
     font-weight: 900;
     letter-spacing: -.7px;
@@ -1244,13 +981,1202 @@ svg {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    text-align: center;
-    color: #ffffff;
+    color: #fff;
 }
 
-.ebook-botao:focus-visible {
-    outline: 3px solid #bfdbfe;
-    outline-offset: 4px;
+/* PLANOS */
+
+.grade-planos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.plano-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 0;
+    padding: 28px;
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    background: linear-gradient(
+        155deg,
+        rgba(15, 34, 63, .98),
+        rgba(9, 21, 42, .98)
+    );
+    transition:
+        transform .3s,
+        border-color .3s,
+        box-shadow .3s;
+}
+
+.plano-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(56, 189, 248, .65);
+    box-shadow: 0 20px 50px rgba(29, 78, 216, .18);
+}
+
+.plano-card.destaque {
+    border-color: #3b82f6;
+    background: linear-gradient(155deg, #133663, #0c1930 75%);
+}
+
+.selo-destaque {
+    position: absolute;
+    top: -13px;
+    right: 20px;
+    padding: 7px 11px;
+    border-radius: 7px;
+    background: #2563eb;
+    color: white;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: .7px;
+}
+
+.plano-topo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.plano-icone {
+    width: 49px;
+    height: 49px;
+    display: grid;
+    place-items: center;
+    margin: 20px 0;
+    border: 1px solid rgba(56, 189, 248, .3);
+    border-radius: 13px;
+    background: rgba(37, 99, 235, .14);
+    color: #7dd3fc;
+}
+
+.plano-icone svg {
+    width: 24px;
+    height: 24px;
+}
+
+.plano-card h3 {
+    margin-bottom: 10px;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -.5px;
+}
+
+.plano-card p {
+    color: var(--cinza);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.plano-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    list-style: none;
+}
+
+.plano-lista li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: #cbd5e1;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.plano-lista svg {
+    width: 15px;
+    height: 15px;
+    margin-top: 1px;
+    color: #38bdf8;
+}
+
+.plano-rodape {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 22px;
+    border-top: 1px solid var(--borda);
+}
+
+.plano-rodape > span {
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+.plano-rodape > strong {
+    margin-bottom: 10px;
+    font-size: 31px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.botao-contratar {
+    width: 100%;
+}
+
+.plano-romantico .plano-icone {
+    color: #f9a8d4;
+    background: rgba(190, 24, 93, .1);
+    border-color: rgba(244, 114, 182, .3);
+}
+
+.planos-observacao {
+    max-width: 850px;
+    margin-top: 23px;
+    color: #94a3b8;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+/* PROCESSO */
+
+.grade-etapas {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.etapa-card {
+    padding: 25px;
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    background: rgba(12, 25, 48, .85);
+    transition: .3s;
+}
+
+.etapa-card:hover {
+    border-color: #2563eb;
+    transform: translateY(-5px);
+}
+
+.etapa-numero {
+    display: block;
+    margin-bottom: 20px;
+    color: #38bdf8;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.etapa-card > svg {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 20px;
+    color: #60a5fa;
+}
+
+.etapa-card h3 {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.etapa-card p {
+    color: var(--cinza);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* SERVICOS */
+
+.servicos-conteudo {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    align-items: center;
+    gap: 45px;
+    padding: 65px;
+    border: 1px solid rgba(37, 99, 235, .28);
+    border-radius: 24px;
+    background:
+        radial-gradient(
+            ellipse at 85% 50%,
+            rgba(29, 78, 216, .24),
+            transparent 65%
+        ),
+        #0c1930;
+}
+
+.servicos-texto p {
+    max-width: 540px;
+    margin: 20px 0 27px;
+    color: var(--cinza);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.servicos-lista {
+    display: grid;
+    gap: 13px;
+}
+
+.servicos-lista div {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, .025);
+    font-size: 13px;
+}
+
+.servicos-lista svg {
+    color: var(--azul);
+    width: 20px;
+    height: 20px;
+}
+
+/* RODAPE */
+
+.rodape {
+    position: relative;
+    z-index: 1;
+    max-width: 1180px;
+    margin: auto;
+    padding: 30px 5px 40px;
+    border-top: 1px solid var(--borda);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.rodape p {
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+.rodape-comunidade {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #38bdf8;
+    font-size: 12px;
+}
+
+/* MODAL */
+
+.modal-contratacao[hidden] {
+    display: none !important;
+}
+
+.modal-contratacao {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: rgba(2, 6, 23, .88);
+    backdrop-filter: blur(12px);
+}
+
+.modal-conteudo {
+    position: relative;
+    width: 100%;
+    max-width: 530px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 35px;
+    border: 1px solid rgba(96, 165, 250, .3);
+    border-radius: 20px;
+    background: linear-gradient(150deg, #102342, #0c1930);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, .5);
+    animation: surgir .3s ease both;
+}
+
+.fechar-modal {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+    background: rgba(255, 255, 255, .04);
+    color: #fff;
+}
+
+.fechar-modal:hover {
+    background: rgba(37, 99, 235, .3);
+}
+
+.modal-conteudo h2 {
+    margin-bottom: 12px;
+    padding-right: 20px;
+    font-size: 27px;
+    letter-spacing: -.8px;
+}
+
+.modal-descricao {
+    color: var(--cinza);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.resumo-contratacao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 24px 0;
+    padding: 18px;
+    border: 1px solid rgba(96, 165, 250, .25);
+    border-radius: 12px;
+    background: rgba(37, 99, 235, .1);
+}
+
+.resumo-contratacao > div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.resumo-contratacao small {
+    color: #94a3b8;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.resumo-contratacao strong {
+    font-size: 14px;
+}
+
+#resumo-preco {
+    color: #7dd3fc;
+    font-size: 18px;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+#form-contratacao {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+#form-contratacao > label {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#form-contratacao input:not([type="checkbox"]),
+#form-contratacao textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid rgba(96, 165, 250, .25);
+    border-radius: 10px;
+    outline: none;
+    background: #071225;
+    color: #fff;
+    font-size: 13px;
+    transition: border-color .2s;
+}
+
+#form-contratacao input:focus,
+#form-contratacao textarea:focus {
+    border-color: #38bdf8;
+}
+
+#form-contratacao input::placeholder,
+#form-contratacao textarea::placeholder {
+    color: #64748b;
+}
+
+#form-contratacao textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+#form-contratacao .aceite-termos {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    margin-top: 10px;
+    color: #a7b7cd;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.7;
+    cursor: pointer;
+}
+
+.aceite-termos input {
+    margin-top: 3px;
+    accent-color: #2563eb;
+}
+
+#aviso-pagamento {
+    color: #94a3b8;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+#botao-finalizar {
+    width: 100%;
+    margin-top: 6px;
+}
+
+#botao-finalizar:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+}
+
+/* ANIMACOES */
+
+@keyframes surgir {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0) rotate(-10deg);
+    }
+    50% {
+        transform: translateY(-13px) rotate(-10deg);
+    }
+}
+
+@keyframes flutuar-card {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes girar {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes orbitar {
+    from {
+        transform: rotate(-30deg);
+    }
+    to {
+        transform: rotate(330deg);
+    }
+}
+
+@keyframes descer {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(6px);
+    }
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1220px) {
+    .cabecalho {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .hero,
+    .secao,
+    .rodape {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+}
+
+@media (max-width: 980px) {
+    .cabecalho {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 80px;
+        gap: 0;
+    }
+
+    .hero h1,
+    .hero-descricao {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-acoes,
+    .vantagens {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        min-height: 450px;
+    }
+
+    .grade-produtos,
+    .grade-planos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grade-etapas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .servicos-conteudo {
+        grid-template-columns: 1fr;
+        padding: 45px;
+    }
+}
+
+@media (max-width: 650px) {
+    .cabecalho {
+        margin: 12px 12px 0;
+        padding: 14px;
+        gap: 16px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .botao-cabecalho {
+        padding: 11px;
+        font-size: 10px;
+    }
+
+    .menu {
+        gap: 17px;
+    }
+
+    .menu a {
+        font-size: 12px;
+    }
+
+    .hero {
+        margin: 0 18px;
+        padding: 65px 0 70px;
+    }
+
+    .hero h1 {
+        font-size: clamp(35px, 9vw, 49px);
+        letter-spacing: -1.7px;
+    }
+
+    .hero-descricao {
+        font-size: 13px;
+    }
+
+    .hero-visual {
+        min-height: 360px;
+        transform: scale(.7);
+        margin: -35px 0;
+    }
+
+    .status-direita {
+        right: -25px;
+    }
+
+    .secao {
+        margin: 0 18px;
+        padding: 60px 0;
+    }
+
+    .secao-cabecalho {
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .grade-produtos,
+    .grade-planos {
+        grid-template-columns: 1fr;
+    }
+
+    .produto-informacoes p {
+        min-height: auto;
+    }
+
+    .grade-etapas {
+        grid-template-columns: 1fr;
+    }
+
+    .servicos-conteudo {
+        padding: 35px 22px;
+    }
+
+    .rodape {
+        margin: 0 18px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .modal-conteudo {
+        padding: 26px 19px;
+    }
+
+    .resumo-contratacao {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 380px) {
+    .botao-cabecalho {
+        display: none;
+    }
+
+    .hero-acoes {
+        flex-direction: column;
+    }
+
+    .hero-visual {
+        transform: scale(.58);
+        margin: -65px 0;
+    }
+
+    .plano-card {
+        padding: 22px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ==========================================
+   DEVINICIANTE STUDIO
+   CORREÇÃO VISUAL DOS PLANOS
+   DESKTOP + TABLET + MOBILE
+========================================== */
+
+/* ORGANIZAÇÃO DA SEÇÃO */
+
+.planos {
+    position: relative;
+    width: 100%;
+}
+
+.planos .secao-cabecalho {
+    margin-bottom: 38px;
+}
+
+.grade-planos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+/* CARTÕES */
+
+.grade-planos .plano-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    padding: 28px;
+    border: 1px solid rgba(96, 165, 250, 0.18);
+    border-radius: 20px;
+    background: linear-gradient(
+        155deg,
+        rgba(16, 35, 66, 0.96),
+        rgba(9, 20, 39, 0.96)
+    );
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.15);
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.grade-planos .plano-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(59, 130, 246, 0.6);
+    box-shadow: 0 22px 50px rgba(37, 99, 235, 0.14);
+}
+
+/* CARTÃO EM DESTAQUE */
+
+.grade-planos .plano-card.destaque {
+    border-color: rgba(59, 130, 246, 0.65);
+    background: linear-gradient(
+        155deg,
+        rgba(21, 47, 91, 0.98),
+        rgba(9, 20, 39, 0.98)
+    );
+}
+
+.grade-planos .selo-destaque {
+    position: absolute;
+    top: -13px;
+    right: 20px;
+    z-index: 2;
+    padding: 8px 13px;
+    border-radius: 999px;
+    background: #2563eb;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+/* CABEÇALHO DO CARTÃO */
+
+.grade-planos .plano-topo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.grade-planos .plano-topo .categoria {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0;
+    color: #7dd3fc;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* ÍCONES */
+
+.grade-planos .plano-icone {
+    position: relative;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 54px;
+    height: 54px;
+    margin: 20px 0;
+    padding: 0;
+    border: 1px solid rgba(96, 165, 250, 0.25);
+    border-radius: 15px;
+    background: rgba(37, 99, 235, 0.13);
+    color: #60a5fa;
+    transform: none;
+}
+
+.grade-planos .plano-icone svg {
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin: 0;
+    padding: 0;
+    stroke-width: 1.8;
+}
+
+/* TÍTULO E DESCRIÇÃO */
+
+.grade-planos .plano-card h3 {
+    margin: 0 0 12px;
+    color: #f1f5f9;
+    font-size: clamp(19px, 1.7vw, 22px);
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: -0.5px;
+}
+
+.grade-planos .plano-topo p {
+    margin: 0 0 24px;
+    color: #a7b7cd;
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+/* LISTA DE BENEFÍCIOS */
+
+.grade-planos .plano-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    width: 100%;
+    margin: 0 0 28px;
+    padding: 0;
+    list-style: none;
+}
+
+.grade-planos .plano-lista li {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    margin: 0;
+    padding: 0;
+    color: #cbd5e1;
+    font-size: 12px;
+    line-height: 1.65;
+    list-style: none;
+}
+
+.grade-planos .plano-lista li::marker {
+    content: "";
+}
+
+.grade-planos .plano-lista li::before {
+    content: none;
+}
+
+.grade-planos .plano-lista li svg {
+    display: block;
+    flex: 0 0 17px;
+    width: 17px;
+    height: 17px;
+    margin-top: 2px;
+    color: #60a5fa;
+    stroke-width: 2.5;
+}
+
+/* PREÇO E BOTÃO */
+
+.grade-planos .plano-rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 23px;
+    border-top: 1px solid rgba(96, 165, 250, 0.15);
+}
+
+.grade-planos .plano-rodape > span {
+    display: block;
+    margin: 0;
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+.grade-planos .plano-rodape > strong {
+    display: block;
+    margin: 0 0 14px;
+    color: #f8fafc;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.grade-planos .botao-contratar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 49px;
+    margin: 0;
+    padding: 13px 18px;
+    border: 1px solid transparent;
+    border-radius: 11px;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 800;
+    text-align: center;
+    cursor: pointer;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.grade-planos .botao-contratar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35);
+}
+
+.grade-planos .botao-contratar svg {
+    width: 17px;
+    height: 17px;
+}
+
+/* CARTÃO ROMÂNTICO */
+
+.grade-planos .plano-romantico .plano-icone {
+    border-color: rgba(244, 114, 182, 0.3);
+    background: rgba(190, 24, 93, 0.12);
+    color: #f9a8d4;
+}
+
+/* OBSERVAÇÃO ABAIXO DOS PLANOS */
+
+.planos-observacao {
+    max-width: 900px;
+    margin: 30px auto 0;
+    color: #94a3b8;
+    font-size: 12px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* MODAL DE CONTRATAÇÃO */
+
+.modal-contratacao[hidden] {
+    display: none !important;
+}
+
+/* RESPONSIVIDADE - TABLET */
+
+@media (max-width: 980px) {
+    .grade-planos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .grade-planos .plano-card {
+        padding: 25px;
+    }
+}
+
+/* RESPONSIVIDADE - CELULAR */
+
+@media (max-width: 650px) {
+    .planos .secao-cabecalho {
+        margin-bottom: 30px;
+    }
+
+    .grade-planos {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .grade-planos .plano-card {
+        padding: 24px;
+        border-radius: 18px;
+    }
+
+    .grade-planos .plano-icone {
+        width: 50px;
+        height: 50px;
+        margin: 18px 0;
+    }
+
+    .grade-planos .plano-card h3 {
+        font-size: 21px;
+    }
+
+    .grade-planos .plano-topo p {
+        font-size: 13px;
+    }
+
+    .grade-planos .plano-rodape > strong {
+        font-size: 29px;
+    }
+
+    .grade-planos .botao-contratar {
+        width: 100%;
+        min-height: 50px;
+    }
+
+    .grade-planos .selo-destaque {
+        right: 16px;
+        font-size: 9px;
+    }
+
+    .planos-observacao {
+        margin-top: 25px;
+        font-size: 11px;
+    }
+}
+
+/* TELAS MUITO PEQUENAS */
+
+@media (max-width: 360px) {
+    .grade-planos .plano-card {
+        padding: 20px;
+    }
+
+    .grade-planos .plano-card h3 {
+        font-size: 19px;
+    }
+}
+
+/* ==========================================
+   DEVINICIANTE STUDIO
+   SITE PERSONALIZADO SOB ORÇAMENTO
+========================================== */
+
+.grade-planos {
+    display: grid;
+    grid-template-columns: minmax(0, 760px);
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+    margin-inline: auto;
+}
+
+.grade-planos .plano-personalizado {
+    width: 100%;
+    max-width: 760px;
+    padding: clamp(24px, 5vw, 42px);
+    border: 1px solid rgba(96, 165, 250, 0.35);
+    border-radius: 24px;
+    background: linear-gradient(
+        145deg,
+        rgba(18, 43, 82, 0.97),
+        rgba(8, 19, 39, 0.98)
+    );
+    box-shadow: 0 20px 65px rgba(0, 0, 0, 0.2);
+}
+
+.grade-planos .plano-personalizado .plano-icone {
+    width: 62px;
+    height: 62px;
+    margin: 20px 0;
+    border-radius: 18px;
+}
+
+.grade-planos .plano-personalizado h3 {
+    font-size: clamp(24px, 4vw, 32px);
+    letter-spacing: -0.8px;
+}
+
+.grade-planos .plano-personalizado .plano-topo p {
+    max-width: 600px;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.tipos-projeto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 4px 0 30px;
+}
+
+.tipos-projeto span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 13px;
+    border: 1px solid rgba(96, 165, 250, 0.18);
+    border-radius: 999px;
+    background: rgba(59, 130, 246, 0.09);
+    color: #cbd5e1;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.tipos-projeto svg {
+    width: 15px;
+    height: 15px;
+    color: #60a5fa;
+}
+
+.grade-planos .plano-personalizado .plano-lista {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 22px;
+    row-gap: 16px;
+    margin-bottom: 30px;
+}
+
+.grade-planos .plano-personalizado .plano-lista li {
+    font-size: 13px;
+}
+
+.grade-planos .plano-personalizado .plano-rodape {
+    align-items: flex-start;
+    padding-top: 28px;
+}
+
+.grade-planos .plano-personalizado .plano-rodape > strong {
+    margin-bottom: 0;
+    font-size: clamp(26px, 5vw, 36px);
+    line-height: 1.25;
+    letter-spacing: -1px;
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #93c5fd
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.texto-orcamento {
+    max-width: 520px;
+    margin: 5px 0 20px;
+    color: #94a3b8;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.grade-planos .plano-personalizado .botao-contratar {
+    max-width: 380px;
+    min-height: 54px;
+    font-size: 14px;
+}
+
+@media (max-width: 650px) {
+    .grade-planos {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .grade-planos .plano-personalizado {
+        padding: 24px;
+        border-radius: 20px;
+    }
+
+    .tipos-projeto {
+        gap: 8px;
+        margin-bottom: 26px;
+    }
+
+    .tipos-projeto span {
+        padding: 9px 11px;
+        font-size: 11px;
+    }
+
+    .grade-planos .plano-personalizado .plano-lista {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .grade-planos .plano-personalizado .botao-contratar {
+        max-width: none;
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .grade-planos .plano-personalizado {
+        transition: none;
+    }
 }
 
 /* ==========================================

@@ -1,60 +1,32 @@
 
-/* ==========================================
-   DEVINICIANTE — LOJA
-   NAVEGAÇÃO + CONTRATAÇÃO
-   ========================================== */
-
 document.addEventListener("DOMContentLoaded", () => {
+    "use strict";
 
-    // ======================================
-    // CONFIGURAÇÃO DOS PLANOS
-    // ======================================
+    // ==========================================
+    // DEVINICIANTE STUDIO
+    // ORÇAMENTOS PERSONALIZADOS
+    // ==========================================
 
-    const PLANOS = {
-        "empresarial-basico": {
-            nome: "Site Empresarial Básico",
-            preco: 70
-        },
+    const WHATSAPP = "5561993257747";
 
-        "empresarial-avancado": {
-            nome: "Site Empresarial Avançado",
-            preco: 90
-        },
-
-        "pessoal-basico": {
-            nome: "Site Pessoal Básico",
-            preco: 80
-        },
-
-        "pessoal-avancado": {
-            nome: "Site Pessoal Avançado",
-            preco: 120
-        },
-
-        "romantico": {
-            nome: "Site Romântico Personalizado",
-            preco: 110
+    const SERVICOS = {
+        personalizado: {
+            nome: "Site Personalizado",
+            preco: "Sob orçamento"
         }
     };
 
-    const formatarPreco = (valor) => {
-        return new Intl.NumberFormat("pt-BR", {
-            style: "currency",
-            currency: "BRL"
-        }).format(valor);
-    };
-
-    // ======================================
-    // ÍCONES LUCIDE
-    // ======================================
+    // ==========================================
+    // ÍCONES
+    // ==========================================
 
     if (window.lucide) {
         window.lucide.createIcons();
     }
 
-    // ======================================
+    // ==========================================
     // MENU ATIVO AO ROLAR
-    // ======================================
+    // ==========================================
 
     const links = document.querySelectorAll(
         '.menu a[href^="#"]'
@@ -65,27 +37,20 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     if ("IntersectionObserver" in window) {
-
         const observador = new IntersectionObserver(
             (entradas) => {
-
                 entradas.forEach((entrada) => {
-
                     if (!entrada.isIntersecting) return;
 
                     const id = entrada.target.id;
 
                     links.forEach((link) => {
-
                         link.classList.toggle(
                             "ativo",
                             link.getAttribute("href") === `#${id}`
                         );
-
                     });
-
                 });
-
             },
             {
                 rootMargin: "-25% 0px -55% 0px"
@@ -97,16 +62,36 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ======================================
-    // ELEMENTOS DO FORMULÁRIO
-    // ======================================
+    // ==========================================
+    // FORMULÁRIO
+    // ==========================================
 
     const modal = document.getElementById(
         "modal-contratacao"
     );
 
-    const fecharModalBotao = document.getElementById(
-        "fechar-modal"
+    const formulario = document.getElementById(
+        "form-contratacao"
+    );
+
+    const campoNome = document.getElementById(
+        "cliente-nome"
+    );
+
+    const campoEmail = document.getElementById(
+        "cliente-email"
+    );
+
+    const campoWhatsapp = document.getElementById(
+        "cliente-whatsapp"
+    );
+
+    const campoProjeto = document.getElementById(
+        "cliente-projeto"
+    );
+
+    const campoTermos = document.getElementById(
+        "aceite-termos"
     );
 
     const resumoPlano = document.getElementById(
@@ -117,249 +102,266 @@ document.addEventListener("DOMContentLoaded", () => {
         "resumo-preco"
     );
 
-    const formulario = document.getElementById(
-        "form-contratacao"
-    );
-
     const botaoFinalizar = document.getElementById(
         "botao-finalizar"
     );
 
-    const avisoPagamento = document.getElementById(
+    const aviso = document.getElementById(
         "aviso-pagamento"
     );
 
-    const botoesContratar = document.querySelectorAll(
-        ".botao-contratar"
-    );
+    let servicoSelecionado = null;
+    let focoAnterior = null;
 
-    let planoSelecionado = null;
-    let elementoAnterior = null;
-
-    // ======================================
+    // ==========================================
     // ABRIR MODAL
-    // ======================================
+    // ==========================================
 
-    function abrirModal(codigoPlano) {
+    function abrirModal(idServico) {
+        const servico = SERVICOS[idServico];
 
-        const plano = PLANOS[codigoPlano];
-
-        if (!plano || !modal) {
-            console.error("Plano não encontrado:", codigoPlano);
+        if (!servico || !modal || !formulario) {
+            console.error(
+                "Não foi possível abrir o formulário."
+            );
             return;
         }
 
-        planoSelecionado = codigoPlano;
+        servicoSelecionado = idServico;
+        focoAnterior = document.activeElement;
 
-        elementoAnterior = document.activeElement;
+        formulario.reset();
 
-        if (resumoPlano) {
-            resumoPlano.textContent = plano.nome;
+        resumoPlano.textContent = servico.nome;
+        resumoPreco.textContent = servico.preco;
+
+        if (aviso) {
+            aviso.textContent =
+                "Esta é apenas uma solicitação de orçamento. " +
+                "Nenhum pagamento será realizado agora.";
         }
 
-        if (resumoPreco) {
-            resumoPreco.textContent = formatarPreco(
-                plano.preco
-            );
-        }
-
-        // Reinicia o formulário a cada contratação.
-        if (formulario) {
-            formulario.reset();
+        if (botaoFinalizar) {
+            botaoFinalizar.disabled = false;
         }
 
         modal.hidden = false;
+        modal.setAttribute("aria-hidden", "false");
 
-        modal.setAttribute(
-            "aria-hidden",
-            "false"
-        );
+        document.body.style.overflow = "hidden";
 
-        document.body.classList.add(
-            "modal-aberto"
-        );
-
-        // O pagamento permanece bloqueado
-        // até a integração com o backend.
-        if (botaoFinalizar) {
-            botaoFinalizar.disabled = true;
-        }
-
-        if (avisoPagamento) {
-            avisoPagamento.textContent =
-                "O checkout ainda está em configuração. " +
-                "Nenhum pagamento será realizado nesta versão.";
-        }
-
-        // Leva o foco para o botão de fechar.
-        fecharModalBotao?.focus();
+        campoNome?.focus();
     }
 
-    // ======================================
+    // ==========================================
     // FECHAR MODAL
-    // ======================================
+    // ==========================================
 
     function fecharModal() {
-
-        if (!modal || modal.hidden) {
-            return;
-        }
+        if (!modal) return;
 
         modal.hidden = true;
+        modal.setAttribute("aria-hidden", "true");
 
-        modal.setAttribute(
-            "aria-hidden",
-            "true"
-        );
+        document.body.style.overflow = "";
 
-        document.body.classList.remove(
-            "modal-aberto"
-        );
-
-        planoSelecionado = null;
-
-        // Retorna o foco ao botão utilizado.
-        if (elementoAnterior instanceof HTMLElement) {
-            elementoAnterior.focus();
+        if (focoAnterior?.focus) {
+            focoAnterior.focus();
         }
     }
 
-    // ======================================
-    // BOTÕES CONTRATAR AGORA
-    // ======================================
+    // ==========================================
+    // BOTÃO SOLICITAR ORÇAMENTO
+    // ==========================================
 
-    botoesContratar.forEach((botao) => {
-
+    document.querySelectorAll(
+        ".botao-contratar"
+    ).forEach((botao) => {
         botao.addEventListener("click", () => {
+            abrirModal(botao.dataset.plano);
+        });
+    });
 
-            const codigoPlano = botao.dataset.plano;
+    // ==========================================
+    // FECHAMENTO DO MODAL
+    // ==========================================
 
-            abrirModal(codigoPlano);
-
+    if (modal) {
+        modal.querySelectorAll(
+            "[data-fechar-modal]"
+        ).forEach((botao) => {
+            botao.addEventListener(
+                "click",
+                fecharModal
+            );
         });
 
-    });
+        modal.addEventListener("click", (evento) => {
+            if (evento.target === modal) {
+                fecharModal();
+            }
+        });
+    }
 
-    // ======================================
-    // FECHAR PELO BOTÃO X
-    // ======================================
-
-    fecharModalBotao?.addEventListener(
-        "click",
-        fecharModal
-    );
-
-    // ======================================
-    // FECHAR CLICANDO FORA
-    // ======================================
-
-    modal?.addEventListener("click", (evento) => {
-
-        if (evento.target === modal) {
-            fecharModal();
-        }
-
-    });
-
-    // ======================================
-    // FECHAR COM ESC
-    // ======================================
+    // ==========================================
+    // ACESSIBILIDADE
+    // ==========================================
 
     document.addEventListener("keydown", (evento) => {
-
-        if (!modal || modal.hidden) {
-            return;
-        }
+        if (!modal || modal.hidden) return;
 
         if (evento.key === "Escape") {
             fecharModal();
             return;
         }
 
-        // Mantém a navegação por Tab dentro
-        // da janela de contratação.
-        if (evento.key === "Tab") {
+        if (evento.key !== "Tab") return;
 
-            const elementos = Array.from(
-                modal.querySelectorAll(
-                    'button:not([disabled]), ' +
-                    'input:not([disabled]), ' +
-                    'textarea:not([disabled]), ' +
-                    'select:not([disabled]), ' +
-                    'a[href]'
-                )
-            ).filter((elemento) => {
-                return elemento.getClientRects().length > 0;
-            });
+        const elementos = [
+            ...modal.querySelectorAll(
+                'button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), a[href]'
+            )
+        ].filter((elemento) => {
+            return elemento.getClientRects().length > 0;
+        });
 
-            if (!elementos.length) return;
+        if (!elementos.length) return;
 
-            const primeiro = elementos[0];
+        const primeiro = elementos[0];
+        const ultimo = elementos[elementos.length - 1];
 
-            const ultimo = elementos[
-                elementos.length - 1
-            ];
-
-            if (
-                evento.shiftKey &&
-                document.activeElement === primeiro
-            ) {
-                evento.preventDefault();
-                ultimo.focus();
-            }
-
-            else if (
-                !evento.shiftKey &&
-                document.activeElement === ultimo
-            ) {
-                evento.preventDefault();
-                primeiro.focus();
-            }
+        if (
+            evento.shiftKey &&
+            document.activeElement === primeiro
+        ) {
+            evento.preventDefault();
+            ultimo.focus();
+        } else if (
+            !evento.shiftKey &&
+            document.activeElement === ultimo
+        ) {
+            evento.preventDefault();
+            primeiro.focus();
         }
     });
 
-    // ======================================
-    // FORMULÁRIO DE CONTRATAÇÃO
-    // ======================================
+    // ==========================================
+    // MÁSCARA DE WHATSAPP
+    // ==========================================
 
-    formulario?.addEventListener(
-        "submit",
-        (evento) => {
+    if (campoWhatsapp) {
+        campoWhatsapp.addEventListener("input", () => {
+            const numeros = campoWhatsapp.value
+                .replace(/\D/g, "")
+                .slice(0, 11);
 
+            if (numeros.length <= 2) {
+                campoWhatsapp.value = numeros;
+
+            } else if (numeros.length <= 7) {
+                campoWhatsapp.value =
+                    `(${numeros.slice(0, 2)}) ${numeros.slice(2)}`;
+
+            } else if (numeros.length <= 10) {
+                campoWhatsapp.value =
+                    `(${numeros.slice(0, 2)}) ` +
+                    `${numeros.slice(2, 6)}-${numeros.slice(6)}`;
+
+            } else {
+                campoWhatsapp.value =
+                    `(${numeros.slice(0, 2)}) ` +
+                    `${numeros.slice(2, 7)}-${numeros.slice(7)}`;
+            }
+        });
+    }
+
+    // ==========================================
+    // ENVIAR PEDIDO DE ORÇAMENTO
+    // ==========================================
+
+    if (formulario) {
+        formulario.addEventListener("submit", (evento) => {
             evento.preventDefault();
 
-            // Proteção: não permite finalizar
-            // enquanto o pagamento não estiver
-            // configurado no servidor.
-            if (!planoSelecionado) {
+            if (!formulario.reportValidity()) {
                 return;
             }
 
-            if (avisoPagamento) {
-                avisoPagamento.textContent =
-                    "O sistema de pagamento ainda não " +
-                    "está disponível. Tente novamente " +
-                    "quando o checkout estiver ativo.";
+            if (!servicoSelecionado) {
+                alert("Selecione um serviço.");
+                return;
             }
 
-        }
+            if (!campoTermos.checked) {
+                alert(
+                    "Confirme a autorização de envio dos dados."
+                );
+                campoTermos.focus();
+                return;
+            }
+
+            const nome = campoNome.value.trim();
+            const email = campoEmail.value.trim();
+            const whatsappCliente =
+                campoWhatsapp.value.trim();
+            const projeto = campoProjeto.value.trim();
+
+            const numerosCliente = whatsappCliente.replace(
+                /\D/g,
+                ""
+            );
+
+            if (
+                numerosCliente.length < 10 ||
+                numerosCliente.length > 11
+            ) {
+                alert(
+                    "Digite um WhatsApp válido com DDD."
+                );
+                campoWhatsapp.focus();
+                return;
+            }
+
+            if (projeto.length < 10) {
+                alert(
+                    "Descreva um pouco mais sobre seu projeto."
+                );
+                campoProjeto.focus();
+                return;
+            }
+
+            const servico = SERVICOS[servicoSelecionado];
+
+            const mensagem = [
+                "Olá! Gostaria de solicitar um orçamento na *DevIniciante Studio*.",
+                "",
+                "━━━━━━━━━━━━━━━━",
+                "*NOVO PEDIDO DE ORÇAMENTO*",
+                "━━━━━━━━━━━━━━━━",
+                "",
+                `*Serviço:* ${servico.nome}`,
+                "*Valor:* A definir após análise",
+                "",
+                "*DADOS DO CLIENTE*",
+                `*Nome:* ${nome}`,
+                `*E-mail:* ${email}`,
+                `*WhatsApp:* ${whatsappCliente}`,
+                "",
+                "*DESCRIÇÃO DO PROJETO*",
+                projeto,
+                "",
+                "Gostaria de conversar sobre as possibilidades, valores e prazo de desenvolvimento."
+            ].join("\n");
+
+            const url =
+                `https://wa.me/${WHATSAPP}?text=` +
+                encodeURIComponent(mensagem);
+
+            window.location.href = url;
+        });
+    }
+
+    console.log(
+        "DevIniciante Studio | Sistema de orçamentos iniciado"
     );
-
-    // ======================================
-    // STATUS DA INTEGRAÇÃO
-    // ======================================
-
-    console.info(
-        "[DevIniciante] Loja carregada com sucesso."
-    );
-
-    console.info(
-        "[DevIniciante] Planos disponíveis:",
-        Object.keys(PLANOS).length
-    );
-
-    console.info(
-        "[DevIniciante] Checkout Mercado Pago pendente."
-    );
-
 });
