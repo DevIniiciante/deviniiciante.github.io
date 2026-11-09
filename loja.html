@@ -1,614 +1,161 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#070d1b">
-    <meta name="description" content="DevIniciante Studio: criação de sites empresariais, pessoais e românticos. Produtos digitais e soluções personalizadas.">
-    <title>DevIniciante Studio | Sites e Soluções Digitais</title>
-
-    <link rel="icon" href="assets/dev.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="loja.css">
-
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-    <script src="loja.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d19">
+  <title>Criação de sites personalizados | Loja DevIniciante Studio</title>
+  <meta name="description" content="Sites empresariais, pessoais e românticos, landing pages e projetos especiais sob orçamento. Conheça os serviços e o e-book da DevIniciante.">
+  <link rel="canonical" href="https://deviniiciante.github.io/loja.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="DevIniciante">
+  <meta property="og:title" content="Criação de sites personalizados | Loja DevIniciante Studio">
+  <meta property="og:description" content="Sites empresariais, pessoais e românticos, landing pages e projetos especiais sob orçamento. Conheça os serviços e o e-book da DevIniciante.">
+  <meta property="og:url" content="https://deviniiciante.github.io/loja.html">
+  <meta property="og:image" content="https://deviniiciante.github.io/assets/compartilhar.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="DevIniciante Studio, design e desenvolvimento web">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Criação de sites personalizados | Loja DevIniciante Studio">
+  <meta name="twitter:description" content="Sites empresariais, pessoais e românticos, landing pages e projetos especiais sob orçamento. Conheça os serviços e o e-book da DevIniciante.">
+  <meta name="twitter:image" content="https://deviniiciante.github.io/assets/compartilhar.jpg">
+  <meta name="twitter:image:alt" content="DevIniciante Studio, design e desenvolvimento web">
+  <link rel="icon" type="image/svg+xml" href="assets/marca.svg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="loja.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://deviniiciante.github.io/#estudio",
+    "name": "DevIniciante Studio",
+    "url": "https://deviniiciante.github.io/",
+    "logo": "https://deviniiciante.github.io/assets/marca.svg",
+    "sameAs": ["https://www.instagram.com/deviniiciante/", "https://www.tiktok.com/@devinciante_"]
+  }
+  </script>
+  <script src="interacoes.js" defer></script>
+  <script src="loja.js" defer></script>
 </head>
-<body>
-
-    <div class="ambiente" aria-hidden="true">
-        <div class="estrelas"></div>
-        <div class="nebulosa nebulosa-esquerda"></div>
-        <div class="nebulosa nebulosa-direita"></div>
-        <div class="planeta"></div>
+<body class="shop">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header class="header wrap">
+  <a class="brand" href="./"><img src="assets/marca.svg" alt="" width="38" height="38"><span>Dev<span class="brand-blue">Iniciante</span><small>ESTÚDIO DIGITAL</small></span></a>
+  <nav aria-label="Navegação principal">
+    <a href="./" >Comunidade</a>
+    <a href="loja.html" aria-current="page">Loja</a>
+    <a href="#produtos">E-book</a>
+  </nav>
+  <a class="header-cta" href="https://wa.me/5561993257747?text=Ol%C3%A1%21%20Quero%20conversar%20sobre%20um%20projeto%20personalizado%20da%20DevIniciante%20Studio." target="_blank" rel="noopener noreferrer">Orçamento <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M7 6h11v11"/></svg></a>
+</header>
+<main id="conteudo" class="wrap">
+  <section class="hero" id="inicio" aria-labelledby="titulo">
+    <div class="hero-copy">
+      <p class="eyebrow"><span></span> LOJA / PROJETOS SOB MEDIDA</p>
+      <h1 id="titulo">Seu projeto,<br><em>do seu jeito.</em></h1>
+      <p class="lede">Da primeira ideia ao site publicado, criamos páginas que combinam com a sua marca, funcionam em qualquer tela e facilitam o contato com seu público.</p>
+      <div class="actions">
+        <a class="button primary" href="https://wa.me/5561993257747?text=Ol%C3%A1%21%20Quero%20conversar%20sobre%20um%20projeto%20personalizado%20da%20DevIniciante%20Studio." target="_blank" rel="noopener noreferrer">Pedir orçamento<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M7 6h11v11"/></svg></a>
+        <a class="button secondary" href="#servicos" >Conhecer os serviços<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      </div>
+      <ul class="hero-tags"><li>Design personalizado</li><li>Layout responsivo</li><li>Sob orçamento</li></ul>
     </div>
-
-    <header class="cabecalho">
-        <a class="logo" href="#inicio" aria-label="DevIniciante Studio - Início">
-            <span class="logo-icone">&lt;/&gt;</span>
-            <span>Dev<strong>Iniciante</strong></span>
-        </a>
-
-        <nav class="menu" aria-label="Menu principal">
-            <a href="#inicio" class="ativo">Início</a>
-            <a href="#produtos">Produtos</a>
-            <a href="#planos">Planos</a>
-            <a href="#servicos">Serviços</a>
-            <a href="index.html">Comunidade</a>
-        </nav>
-
-        <a class="botao-cabecalho" href="#planos">
-            Criar meu site
-            <i data-lucide="arrow-up-right"></i>
-        </a>
-    </header>
-
-    <main>
-
-        <!-- HERO -->
-        <section class="hero" id="inicio">
-            <div class="hero-conteudo">
-                <div class="etiqueta">
-                    <span class="ponto-luz"></span>
-                    CRIATIVIDADE + TECNOLOGIA
-                </div>
-
-                <h1>
-                    Ideias incríveis merecem
-                    <span>soluções extraordinárias.</span>
-                </h1>
-
-                <p class="hero-descricao">
-                    Desenvolvemos experiências digitais que unem tecnologia,
-                    criatividade e design. Transforme sua ideia em um site
-                    profissional, moderno e feito especialmente para você.
-                </p>
-
-                <div class="hero-acoes">
-                    <a href="#planos" class="botao botao-primario">
-                        Conhecer planos
-                        <i data-lucide="arrow-right"></i>
-                    </a>
-
-                    <a href="#produtos" class="botao botao-outline">
-                        Explorar produtos
-                        <i data-lucide="shopping-bag"></i>
-                    </a>
-                </div>
-
-                <div class="vantagens">
-                    <span><i data-lucide="monitor"></i> Design moderno</span>
-                    <span><i data-lucide="smartphone"></i> Responsivo</span>
-                    <span><i data-lucide="sparkles"></i> Personalizado</span>
-                </div>
-            </div>
-
-            <div class="hero-visual" aria-label="Ilustração de desenvolvimento digital">
-                <div class="halo"></div>
-                <div class="orbita orbita-um"></div>
-                <div class="orbita orbita-dois"></div>
-                <div class="orbita orbita-tres"></div>
-
-                <div class="nucleo">
-                    <span>&lt;/&gt;</span>
-                </div>
-
-                <div class="status-flutuante status-superior">
-                    <span class="indicador-verde"></span>
-                    <div>
-                        <strong>Projeto em desenvolvimento</strong>
-                        <small>Sempre evoluindo</small>
-                    </div>
-                </div>
-
-                <div class="status-flutuante status-direita">
-                    <i data-lucide="chart-no-axes-column-increasing"></i>
-                    <div>
-                        <strong>Ideias que se tornam</strong>
-                        <small>realidade</small>
-                    </div>
-                </div>
-
-                <div class="status-flutuante status-inferior">
-                    <i data-lucide="star"></i>
-                    <div>
-                        <strong>Criando o futuro digital</strong>
-                        <small>Código, design e propósito</small>
-                    </div>
-                </div>
-            </div>
-
-            <a href="#produtos" class="indicador-scroll" aria-label="Ir para produtos">
-                <i data-lucide="mouse"></i>
-                <i data-lucide="chevron-down"></i>
-            </a>
-        </section>
-
-        <!-- PRODUTOS -->
-        <section class="secao produtos" id="produtos">
-            <div class="secao-cabecalho">
-                <div>
-                    <span class="secao-etiqueta">NOSSA VITRINE</span>
-                    <h2>Produtos <span>digitais.</span></h2>
-                    <p>Explore soluções criadas com atenção a cada detalhe.</p>
-                </div>
-
-                <a href="#catalogo" class="botao-ver-todos">
-                    Ver todos
-                    <i data-lucide="arrow-right"></i>
-                </a>
-            </div>
-
-            <div class="grade-produtos" id="catalogo">
-
-                <!-- E-BOOK -->
-                <article class="produto-card ebook-card">
-                    <div class="produto-preview ebook-preview">
-                        <img
-                            src="assets/capa-ebook.png"
-                            alt="Capa do e-book Como Criar Seu Primeiro Site Profissional"
-                            class="ebook-imagem"
-                            loading="lazy"
-                        >
-                    </div>
-
-                    <div class="produto-informacoes">
-                        <span class="categoria">E-BOOK • HTML & CSS</span>
-
-                        <h3>Como Criar Seu Primeiro Site Profissional</h3>
-
-                        <p>
-                            Aprenda HTML e CSS do zero, pratique com exemplos
-                            e crie seu próprio site. Inclui projeto bônus
-                            de portfólio!
-                        </p>
-
-                        <div class="ebook-preco">
-                            <span>Preço especial de lançamento</span>
-                            <strong>R$ 15,90</strong>
-                        </div>
-
-                        <a
-                            href="https://pay.kiwify.com.br/lRGjt4s"
-                            class="botao botao-primario ebook-botao"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Comprar e-book
-                            <i data-lucide="shopping-cart"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- WEBSITE -->
-                <article class="produto-card">
-                    <div class="produto-preview preview-site">
-                        <div class="mockup-janela">
-                            <div class="mockup-barra">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <div class="mockup-corpo">
-                                <div class="mockup-lateral"></div>
-                                <div class="mockup-painel">
-                                    <div class="mockup-linha"></div>
-                                    <div class="mockup-blocos">
-                                        <span></span><span></span><span></span>
-                                    </div>
-                                    <div class="mockup-grafico"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="produto-informacoes">
-                        <span class="categoria">WEBSITE</span>
-                        <h3>Seu próximo projeto</h3>
-                        <p>Em breve, nossos primeiros sites e templates estarão disponíveis.</p>
-
-                        <div class="produto-rodape">
-                            <strong>Em breve</strong>
-                            <span>Aguarde <i data-lucide="arrow-right"></i></span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- APLICATIVO -->
-                <article class="produto-card">
-                    <div class="produto-preview preview-app">
-                        <div class="mockup-celular">
-                            <div class="mockup-notch"></div>
-                            <div class="app-titulo"></div>
-                            <div class="app-grafico">
-                                <span></span><span></span><span></span><span></span>
-                            </div>
-                            <div class="app-cartoes">
-                                <span></span><span></span>
-                            </div>
-                        </div>
-                        <div class="mockup-celular celular-atras"></div>
-                    </div>
-
-                    <div class="produto-informacoes">
-                        <span class="categoria">APLICATIVO</span>
-                        <h3>Novidades chegando</h3>
-                        <p>Aplicativos e ferramentas desenvolvidos para facilitar tarefas.</p>
-
-                        <div class="produto-rodape">
-                            <strong>Em breve</strong>
-                            <span>Aguarde <i data-lucide="arrow-right"></i></span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- SISTEMA -->
-                <article class="produto-card">
-                    <div class="produto-preview preview-sistema">
-                        <div class="sistema-painel">
-                            <div class="sistema-menu"></div>
-                            <div class="sistema-conteudo">
-                                <div class="sistema-topo"></div>
-                                <div class="sistema-grid">
-                                    <span></span><span></span>
-                                    <span></span><span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="produto-informacoes">
-                        <span class="categoria">SISTEMA</span>
-                        <h3>Mais soluções</h3>
-                        <p>Novos projetos e sistemas personalizados estão a caminho.</p>
-
-                        <div class="produto-rodape">
-                            <strong>Em breve</strong>
-                            <span>Aguarde <i data-lucide="arrow-right"></i></span>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- PLANOS -->
-       
-<!-- SITE PERSONALIZADO -->
-<section class="secao planos" id="planos">
-    <div class="secao-cabecalho">
-        <div>
-            <span class="secao-etiqueta">
-                DEVINICIANTE STUDIO
-            </span>
-
-            <h2>
-                Seu projeto, <span>do seu jeito.</span>
-            </h2>
-
-            <p>
-                Cada ideia é única. Desenvolvemos sites
-                personalizados para diferentes necessidades,
-                com orçamento definido de acordo com seu projeto.
-            </p>
-        </div>
+    <div class="art art-shop" data-glow aria-hidden="true">
+    <div class="art-meta"><span><i></i> ESTÚDIO / WEB</span><span>FIG. 02</span></div>
+    <div class="art-field">
+      <div class="art-glow"></div>
+      <img class="art-wave" src="assets/ondas.svg" alt="" width="600" height="350">
+      <div class="art-core"><img src="assets/marca.svg" alt="" width="144" height="144"></div>
+      <span class="cross cross-top">+</span><span class="cross cross-bottom">+</span>
     </div>
+    <div class="art-meta art-bottom"><span>DESIGN · CÓDIGO · WEB</span><span>✦</span></div>
+  </div>
+  </section>
 
-    <div class="grade-planos">
-
-        <article class="plano-card plano-personalizado">
-
-            <div class="plano-topo">
-                <span class="categoria">
-                    DESENVOLVIMENTO WEB
-                </span>
-
-                <div class="plano-icone">
-                    <i data-lucide="code-2"></i>
-                </div>
-
-                <h3>Site Personalizado</h3>
-
-                <p>
-                    Transformamos sua ideia em uma experiência
-                    digital moderna, responsiva e desenvolvida
-                    especialmente para você.
-                </p>
-            </div>
-
-            <div class="tipos-projeto">
-                <span>
-                    <i data-lucide="building-2"></i>
-                    Empresarial
-                </span>
-
-                <span>
-                    <i data-lucide="user-round"></i>
-                    Pessoal
-                </span>
-
-                <span>
-                    <i data-lucide="heart"></i>
-                    Romântico
-                </span>
-
-                <span>
-                    <i data-lucide="briefcase-business"></i>
-                    Portfólio
-                </span>
-
-                <span>
-                    <i data-lucide="rocket"></i>
-                    Projetos especiais
-                </span>
-            </div>
-
-            <ul class="plano-lista">
-                <li>
-                    <i data-lucide="check"></i>
-                    Design personalizado
-                </li>
-
-                <li>
-                    <i data-lucide="check"></i>
-                    Layout adaptado para celular e computador
-                </li>
-
-                <li>
-                    <i data-lucide="check"></i>
-                    Animações e efeitos visuais opcionais
-                </li>
-
-                <li>
-                    <i data-lucide="check"></i>
-                    Funcionalidades conforme a necessidade
-                </li>
-
-                <li>
-                    <i data-lucide="check"></i>
-                    Orçamento individual para cada projeto
-                </li>
-            </ul>
-
-            <div class="plano-rodape">
-                <span>Investimento</span>
-
-                <strong>Sob orçamento</strong>
-
-                <p class="texto-orcamento">
-                    O valor é definido após entendermos
-                    o tamanho, os recursos e a complexidade
-                    do seu projeto.
-                </p>
-
-                <button
-                    type="button"
-                    class="botao botao-primario botao-contratar"
-                    data-plano="personalizado"
-                >
-                    Solicitar orçamento
-                    <i data-lucide="arrow-up-right"></i>
-                </button>
-            </div>
-
-        </article>
-
+  <section id="servicos" class="section" aria-labelledby="servicos-titulo">
+    <div id="planos" class="section-heading">
+      <div><p class="eyebrow"><span></span> 01 / DESENVOLVIMENTO WEB</p><h2 id="servicos-titulo">O que podemos criar<span class="period">.</span></h2></div>
+      <p>O orçamento considera o objetivo, o tamanho e as funcionalidades do seu projeto.</p>
     </div>
-
-    <p class="planos-observacao">
-        Cada orçamento é elaborado individualmente.
-        Domínio próprio, hospedagem paga e recursos
-        adicionais podem ter custos separados,
-        informados antes da contratação.
-    </p>
-</section>
-
-
-        <!-- COMO FUNCIONA -->
-        <section class="secao processo" id="como-funciona">
-            <div class="secao-cabecalho">
-                <div>
-                    <span class="secao-etiqueta">SIMPLES E DIRETO</span>
-                    <h2>Como <span>funciona?</span></h2>
-                    <p>Do primeiro contato até a entrega do seu projeto.</p>
-                </div>
-            </div>
-
-            <div class="grade-etapas">
-                <article class="etapa-card">
-    <span class="etapa-numero">01</span>
-    <i data-lucide="lightbulb"></i>
-    <h3>Conte sua ideia</h3>
-    <p>Descreva o site que deseja criar e as funcionalidades que imagina.</p>
-</article>
-
-                <article class="etapa-card">
-    <span class="etapa-numero">02</span>
-    <i data-lucide="message-circle"></i>
-    <h3>Receba seu orçamento</h3>
-    <p>Analisamos seu projeto e combinamos o valor, os recursos e o prazo.</p>
-</article>
-
-                <article class="etapa-card">
-                    <span class="etapa-numero">03</span>
-                    <i data-lucide="code-2"></i>
-                    <h3>Desenvolvimento</h3>
-                    <p>Após o alinhamento, começamos a criação do projeto.</p>
-                </article>
-
-                <article class="etapa-card">
-                    <span class="etapa-numero">04</span>
-                    <i data-lucide="rocket"></i>
-                    <h3>Entrega</h3>
-                    <p>Você recebe seu site conforme o escopo combinado.</p>
-                </article>
-            </div>
-        </section>
-
-        <!-- SERVICOS -->
-        <section class="secao servicos" id="servicos">
-            <div class="servicos-conteudo">
-                <div class="servicos-texto">
-                    <span class="secao-etiqueta">PROJETOS SOB ENCOMENDA</span>
-                    <h2>Sua ideia merece sair <span>do papel.</span></h2>
-
-                    <p>
-                        Precisa de um site ou tem uma ideia diferente?
-                        Conte o que você imagina e vamos conversar sobre
-                        a melhor solução para seu projeto.
-                    </p>
-
-                    <a
-                        class="botao botao-primario"
-                        href="https://wa.me/5561993257747?text=Ol%C3%A1%21%20Quero%20conversar%20sobre%20um%20projeto%20personalizado%20da%20DevIniciante%20Studio."
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Conversar pelo WhatsApp
-                        <i data-lucide="message-circle"></i>
-                    </a>
-                </div>
-
-                <div class="servicos-lista">
-                    <div>
-                        <i data-lucide="globe"></i>
-                        <span>Sites e landing pages</span>
-                    </div>
-                    <div>
-                        <i data-lucide="smartphone"></i>
-                        <span>Experiências responsivas</span>
-                    </div>
-                    <div>
-                        <i data-lucide="palette"></i>
-                        <span>Design personalizado</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- RODAPE -->
-    <footer class="rodape">
-        <a href="#inicio" class="logo">
-            <span class="logo-icone">&lt;/&gt;</span>
-            <span>Dev<strong>Iniciante</strong></span>
-        </a>
-
-        <p>© 2026 DevIniciante Studio. Criando, aprendendo e evoluindo.</p>
-
-        <a href="index.html" class="rodape-comunidade">
-            Comunidade
-            <i data-lucide="arrow-up-right"></i>
-        </a>
-    </footer>
-
-    <!-- MODAL DE CONTRATACAO -->
-    <div
-        id="modal-contratacao"
-        class="modal-contratacao"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="titulo-contratacao"
-        aria-hidden="true"
-        hidden
-    >
-        <div class="modal-conteudo">
-            <button
-                type="button"
-                class="fechar-modal"
-                data-fechar-modal
-                aria-label="Fechar formulário"
-            >
-                <i data-lucide="x"></i>
-            </button>
-
-            <span class="secao-etiqueta">SOLICITAR PROJETO</span>
-
-            <h2 id="titulo-contratacao">
-                Vamos criar seu site?
-            </h2>
-
-            <p class="modal-descricao">
-                Preencha seus dados. Você será direcionado ao
-                WhatsApp com sua solicitação pronta para enviar.
-            </p>
-
-            <div class="resumo-contratacao">
-                <div>
-                    <small>PLANO SELECIONADO</small>
-                    <strong id="resumo-plano">—</strong>
-                </div>
-                <span id="resumo-preco">—</span>
-            </div>
-
-            <form id="form-contratacao">
-                <label for="cliente-nome">Nome completo *</label>
-                <input
-                    id="cliente-nome"
-                    type="text"
-                    maxlength="100"
-                    autocomplete="name"
-                    placeholder="Seu nome completo"
-                    required
-                >
-
-                <label for="cliente-email">E-mail *</label>
-                <input
-                    id="cliente-email"
-                    type="email"
-                    maxlength="150"
-                    autocomplete="email"
-                    placeholder="seuemail@exemplo.com"
-                    required
-                >
-
-                <label for="cliente-whatsapp">Seu WhatsApp *</label>
-                <input
-                    id="cliente-whatsapp"
-                    type="tel"
-                    maxlength="16"
-                    autocomplete="tel"
-                    placeholder="(61) 99999-9999"
-                    required
-                >
-
-                <label for="cliente-projeto">Conte sobre seu projeto</label>
-                <textarea
-                    id="cliente-projeto"
-                    rows="4"
-                    maxlength="1500"
-                    placeholder="Qual é a sua ideia? Quais cores, funções e detalhes você gostaria de ter?"
-                ></textarea>
-
-                <label class="aceite-termos">
-                    <input
-                        id="aceite-termos"
-                        type="checkbox"
-                        required
-                    >
-                    <span>
-                        Concordo em compartilhar os dados preenchidos
-                        pelo WhatsApp para solicitar meu projeto.
-                    </span>
-                </label>
-
-                <p id="aviso-pagamento">
-                    Nenhum pagamento será realizado nesta etapa.
-                </p>
-
-                <button
-                    id="botao-finalizar"
-                    type="submit"
-                    class="botao botao-primario"
-                >
-                    <i data-lucide="message-circle"></i>
-                    Contratar pelo WhatsApp
-                </button>
-            </form>
-        </div>
+    <div class="service-grid" data-reveal>
+      <article class="service-card" data-glow>
+        <div class="card-top"><span class="tile-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4h14v17M3 21h18M9 8h.01M15 8h.01M9 12h.01M15 12h.01M10 21v-5h4v5"/></svg></span><span>01 / 05</span></div>
+        <h3>Sites empresariais</h3><p>Apresente sua empresa, destaque seus serviços e facilite o contato com seus clientes.</p>
+        <a class="text-link" href="https://wa.me/5561993257747?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20um%20site%20empresarial%20com%20a%20DevIniciante%20Studio." target="_blank" rel="noopener noreferrer" aria-label="Pedir orçamento para sites empresariais">Pedir orçamento <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M7 6h11v11"/></svg></a>
+      </article>
+      <article class="service-card" data-glow>
+        <div class="card-top"><span class="tile-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span><span>02 / 05</span></div>
+        <h3>Landing pages</h3><p>Dê a uma campanha, oferta ou lançamento uma página com uma chamada clara para agir.</p>
+        <a class="text-link" href="https://wa.me/5561993257747?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20uma%20landing%20page%20com%20a%20DevIniciante%20Studio." target="_blank" rel="noopener noreferrer" aria-label="Pedir orçamento para landing pages">Pedir orçamento <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M7 6h11v11"/></svg></a>
+      </article>
+      <article class="service-card" data-glow>
+        <div class="card-top"><span class="tile-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/></svg></span><span>03 / 05</span></div>
+        <h3>Sites pessoais e portfólios</h3><p>Reúna seu trabalho, sua trajetória e seus contatos em um espaço com a sua identidade.</p>
+        <a class="text-link" href="https://wa.me/5561993257747?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20um%20site%20pessoal%20ou%20portf%C3%B3lio%20com%20a%20DevIniciante%20Studio." target="_blank" rel="noopener noreferrer" aria-label="Pedir orçamento para sites pessoais e portfólios">Pedir orçamento <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M7 6h11v11"/></svg></a>
+      </article>
+      <article class="service-card" data-glow>
+        <div class="card-top"><span class="tile-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 5a5 5 0 0 1 0 7L12 21l-8.8-9a5 5 0 0 1 7.1-7L12 7l1.7-2a5 5 0 0 1 7.1 0Z"/></svg></span><span>04 / 05</span></div>
+        <h3>Sites românticos</h3><p>Transforme fotos, histórias e lembranças em uma surpresa feita para alguém especial.</p>
+        <a class="text-link" href="https://wa.me/5561993257747?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20um%20site%20rom%C3%A2ntico%20com%20a%20DevIniciante%20Studio." target="_blank" rel="noopener noreferrer" aria-label="Pedir orçamento para sites românticos">Pedir orçamento <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M7 6h11v11"/></svg></a>
+      </article>
+      <article class="service-card" data-glow>
+        <div class="card-top"><span class="tile-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 10 5-10 5L2 8l10-5Zm-10 9 10 5 10-5M2 16l10 5 10-5"/></svg></span><span>05 / 05</span></div>
+        <h3>Projetos especiais</h3><p>Conte o que você tem em mente. A gente conversa sobre o formato e os recursos que fazem sentido para a sua ideia.</p>
+        <a class="text-link" href="https://wa.me/5561993257747?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20um%20projeto%20digital%20especial%20com%20a%20DevIniciante%20Studio." target="_blank" rel="noopener noreferrer" aria-label="Pedir orçamento para projetos especiais">Pedir orçamento <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M7 6h11v11"/></svg></a>
+      </article>
     </div>
+  </section>
 
+  <section class="section" id="produtos" aria-labelledby="produtos-titulo">
+    <div class="section-heading">
+      <div><p class="eyebrow"><span></span> 02 / PRODUTOS DIGITAIS</p><h2 id="produtos-titulo">Aprenda a criar<span class="period">.</span></h2></div>
+      <p>Um ponto de partida para tirar seu primeiro site do papel.</p>
+    </div>
+    <article class="ebook" id="catalogo" data-reveal>
+      <div class="ebook-image">
+        <img src="assets/ebook.webp" alt="Capa do e-book Como Criar Seu Primeiro Site Profissional" width="760" height="633" loading="lazy" decoding="async">
+      </div>
+      <div class="ebook-copy">
+        <p class="eyebrow">E-BOOK / HTML + CSS</p>
+        <h3>Como Criar Seu Primeiro Site Profissional</h3>
+        <p>Aprenda HTML e CSS do zero, pratique com exemplos e monte seu próprio site. Inclui um projeto bônus de portfólio.</p>
+        <div class="ebook-actions"><strong class="price">R$ 15,90</strong><a class="button primary" href="https://pay.kiwify.com.br/lRGjt4s" target="_blank" rel="noopener noreferrer">Comprar e-book<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M7 6h11v11"/></svg></a></div>
+      </div>
+    </article>
+    <p class="future">Em breve na loja: sites e templates, aplicativos e sistemas.</p>
+  </section>
+
+  <section class="section contact" id="orcamento" aria-labelledby="orcamento-titulo">
+    <div class="contact-copy">
+      <p class="eyebrow"><span></span> 03 / VAMOS CONVERSAR</p>
+      <h2 id="orcamento-titulo">Qual é a sua ideia<span class="period">?</span></h2>
+      <p>Conte o que você quer criar. Com essas informações, podemos conversar sobre recursos, prazo e orçamento.</p>
+      <a class="button primary" href="https://wa.me/5561993257747?text=Ol%C3%A1%21%20Quero%20conversar%20sobre%20um%20projeto%20personalizado%20da%20DevIniciante%20Studio." target="_blank" rel="noopener noreferrer">Conversar pelo WhatsApp<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a9 9 0 0 1-9 9 9 9 0 0 1-4-.9L3 21l1.5-4.7a9 9 0 1 1 16.5-4.8Z"/><path d="M9 9c0 3 3 6 6 6"/></svg></a>
+    </div>
+    <div class="briefing" id="briefing" hidden>
+      <details>
+        <summary>Preparar meu briefing <span class="soon">Opcional</span></summary>
+        <form id="form-contratacao" action="https://wa.me/5561993257747">
+          <label for="tipo-projeto">Tipo de projeto</label>
+          <select id="tipo-projeto">
+            <option value="Site personalizado">Ainda estou decidindo</option>
+            <option>Sites empresariais</option><option>Landing pages</option><option>Sites pessoais e portfólios</option><option>Sites românticos</option><option>Projetos especiais</option>
+          </select>
+          <label for="cliente-projeto">Conte um pouco da sua ideia <span>(opcional)</span></label>
+          <textarea id="cliente-projeto" rows="4" maxlength="1000" placeholder="O que você quer que seu site faça?"></textarea>
+          <p>O texto abre no WhatsApp para você revisar e enviar. Nenhum pagamento é solicitado aqui.</p>
+          <button class="button secondary" type="submit">Abrir briefing no WhatsApp <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M7 6h11v11"/></svg></button>
+        </form>
+      </details>
+    </div>
+  </section>
+</main>
+<footer class="footer wrap">
+  <a class="brand" href="./"><img src="assets/marca.svg" alt="" width="38" height="38"><span>Dev<span class="brand-blue">Iniciante</span><small>ESTÚDIO DIGITAL</small></span></a>
+  <p>© 2026 DevIniciante Studio</p>
+  <a href="./">Voltar à comunidade <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+</footer>
 </body>
 </html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://deviniiciante.github.io/sitemap.xml
